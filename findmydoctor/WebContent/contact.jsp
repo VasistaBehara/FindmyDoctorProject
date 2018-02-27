@@ -56,7 +56,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<span class="menu-icon"><img src="images/menu-icon.png" alt=""/></span>		
 				<ul class="nav1">
 					<li><a href="index.jsp"><span data-hover="Home">Home</span></a></li>
-					<li><a href="about.jsp"> <span data-hover="About">About</span></a></li>
+					<!-- <li><a href="about.jsp"> <span data-hover="About">About</span></a></li> -->
 					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
 					<!-- <li><a href="news.jsp"> <span data-hover="News">News</span></a></li> -->
 					<li><a href="contact.jsp" class="active"> <span data-hover="Contact">Contact</span></a></li>

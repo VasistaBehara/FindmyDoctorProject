@@ -32,10 +32,6 @@
 <!--//end-smoth-scrolling-->
 
 
-<script type="text/javascript">
-request.getSession().getAttribute("data");
-</script>
-
 </head>
 <body>
 	<!--header-->
@@ -45,7 +41,7 @@ request.getSession().getAttribute("data");
 				<a href="index.html"><img src="images/Image1.png" alt="logo"/></a>					
 			</div>
 			<div class="header-info">
-				<p>Information Service:</p>
+				<p>Appointment Page</p>
 				<h4>+1-807-356-5161</h4>
 			</div>			
 			<div class="clearfix"> </div>
@@ -60,7 +56,7 @@ request.getSession().getAttribute("data");
 				<span class="menu-icon"><img src="images/menu-icon.png" alt=""/></span>		
 				<ul class="nav1">
 					<li><a href="index.jsp"><span data-hover="Home">Home</span></a></li>
-					<li><a href="about.jsp"> <span data-hover="About">About</span></a></li>
+					<!-- <li><a href="about.jsp"> <span data-hover="About">About</span></a></li> -->
 					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
 					<!-- <li><a href="news.jsp" class="active"> <span data-hover="News">News</span></a></li> -->
 					<li><a href="contact.jsp"> <span data-hover="Contact">Contact</span></a></li>
@@ -96,183 +92,27 @@ request.getSession().getAttribute("data");
 	<!--//header-bottom-->
 	
 	
-	
-	<!--news-->
-	<div class="news">
-		<div class="container">
-	
-				
-	
-			<div class="page-header">				
-			</div>
-			<h3>Doctors</h3>	
-			
-			
-				
-			<div class="container">
-			<div class="bs-docs-example">
-			
-		<c:forEach items="${list}" var="data">
-		
-		  <div class="grid_3 grid_5">
-				<h3> ${data.docName}</h3>
-				<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-					<ul id="myTab" class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><a href="#Today" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Today</a></li>
-						<li role="presentation"><a href="#Tomorrow" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Tomorrow</a></li>
-						<li role="presentation"><a href="#DA" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Day After</a></li>
-						
-					</ul>
-					<div id="myTabContent" class="tab-content">
-						<div role="tabpanel" class="tab-pane fade in active" id="Today" aria-labelledby="Today">
-							<table  class="table table-hover">
-							<thead>
-							<tr>
-							<th>time</th>
-							<th>Availability</th>
-							</tr>
-							</thead>
-							<tbody>
-							<tr>
-								<td>10AM-11AM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day1.t1} </a> <td>
-							</tr>
-							<tr>
-								<td>11AM-12pM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day1.t2} </a> <td>
-							</tr>
-							<tr>
-								<td>12AM-1PM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day1.t3} </a> <td>
-							</tr>
-							<tr>
-								<td>1PM-2PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day1.t4} </a><td>
-							</tr>
-							<tr>
-								<td>2PM-3PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day1.t5} </a><td>
-							</tr>
-							<tr>
-								<td>3PM-4PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day1.t6} </a><td>
-							</tr>
-							<tr>
-								<td>4PM-5PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day1.t7} </a><td>
-							</tr>
-							<tr>
-								<td>5PM-6PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day1.t8} </a><td>
-							</tr>
-							</tbody>
-							</table>
-						</div>
-						<div role="tabpanel" class="tab-pane fade" id="Tomorrow" aria-labelledby="Tomorrow">
-							<table  class="table table-hover">
-							<thead>
-							<tr>
-							<th>time</th>
-							<th>Availability</th>
-							</tr>
-							</thead>
-							<tbody>
-							<tr>
-								<td>10AM-11AM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day2.t21} </a> <td>
-							</tr>
-							<tr>
-								<td>11AM-12pM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day2.t22} </a> <td>
-							</tr>
-							<tr>
-								<td>12AM-1PM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day2.t23} </a> <td>
-							</tr>
-							<tr>
-								<td>1PM-2PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day2.t24} </a><td>
-							</tr>
-							<tr>
-								<td>2PM-3PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day2.t25} </a><td>
-							</tr>
-							<tr>
-								<td>3PM-4PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day2.t26} </a><td>
-							</tr>
-							<tr>
-								<td>4PM-5PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day2.t27} </a><td>
-							</tr>
-							<tr>
-								<td>5PM-6PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day2.t28} </a><td>
-							</tr>
-							</tbody>
-							</table>
-						</div>
-						<div role="tabpanel" class="tab-pane fade" id="DA" aria-labelledby="DA">
-							<table  class="table table-hover">
-							<thead>
-							<tr>
-							<th>time</th>
-							<th>Availability</th>
-							</tr>
-							</thead>
-							<tbody>
-							<tr>
-								<td>10AM-11AM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day3.t31} </a> <td>
-							</tr>
-							<tr>
-								<td>11AM-12pM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day3.t32} </a> <td>
-							</tr>
-							<tr>
-								<td>12AM-1PM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day3.t33} </a> <td>
-							</tr>
-							<tr>
-								<td>1PM-2PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day3.t34} </a><td>
-							</tr>
-							<tr>
-								<td>2PM-3PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day3.t35} </a><td>
-							</tr>
-							<tr>
-								<td>3PM-4PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day3.t36} </a><td>
-							</tr>
-							<tr>
-								<td>4PM-5PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day3.t37} </a><td>
-							</tr>
-							<tr>
-								<td>5PM-6PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day3.t38} </a><td>
-							</tr>
-							</tbody>
-							</table>
-						</div>
-						
-					</div>
-				</div>
-			</div>  
-
-		
-		</c:forEach>
-		<c:if test="${error ne null }"><tr><td colspan="6" align="center">${error}</td></tr></c:if>									
-	
-			
-			</div>
-		  </div>	
-		</div>
-	</div>
-	
-	
-	<!--//news-->	
+	<div style="height:20px"></div>	
+	<div class=".contact-form" >
+ 
+        <div class="container">
+          
+            <div class="form-login">
+            <h4>Welcome back.</h4>
+            <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" />
+            </br>
+            <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
+            </br>
+            <div class="wrapper">
+            <span class="group-btn">     
+                <a href="#" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
+            </span>
+            </div>
+            </div>
+        
+        </div>
+ 
+</div>	
 	
 		<div class="banner-bottom">
 		<div class="container">

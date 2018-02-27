@@ -60,7 +60,7 @@ request.getSession().setAttribute("data", data);
 				<span class="menu-icon"><img src="images/menu-icon.png" alt=""/></span>		
 				<ul class="nav1">
 					<li><a href="index.jsp"><span data-hover="Home">Home</span></a></li>
-					<li><a href="about.jsp"> <span data-hover="About">About</span></a></li>
+					<!-- <li><a href="about.jsp"> <span data-hover="About">About</span></a></li> -->
 					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
 					<!-- <li><a href="news.jsp" class="active"> <span data-hover="News">News</span></a></li> -->
 					<li><a href="contact.jsp"> <span data-hover="Contact">Contact</span></a></li>
@@ -112,8 +112,9 @@ request.getSession().setAttribute("data", data);
 			<div class="container">
 			<div class="bs-docs-example">
 			
+			
 		<c:forEach items="${list}" var="data">
-		
+		<c:set var="data1" value="${data.docName}" scope="session"></c:set>
 		  <div class="grid_3 grid_5">
 				<h3> ${data.docName}</h3>
 				<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
@@ -121,7 +122,6 @@ request.getSession().setAttribute("data", data);
 						<li role="presentation" class="active"><a href="#Today" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Today</a></li>
 						<li role="presentation"><a href="#Tomorrow" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Tomorrow</a></li>
 						<li role="presentation"><a href="#DA" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Day After</a></li>
-						
 					</ul>
 					<div id="myTabContent" class="tab-content">
 						<div role="tabpanel" class="tab-pane fade in active" id="Today" aria-labelledby="Today">
@@ -135,35 +135,35 @@ request.getSession().setAttribute("data", data);
 							<tbody>
 							<tr>
 								<td>10AM-11AM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day1.t1} </a> <td>
+								<td><a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day1.t1} </a> <td>
 							</tr>
 							<tr>
 								<td>11AM-12pM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day1.t2} </a> <td>
+								<td><a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day1.t2} </a> <td>
 							</tr>
 							<tr>
 								<td>12AM-1PM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day1.t3} </a> <td>
+								<td><a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day1.t3} </a> <td>
 							</tr>
 							<tr>
 								<td>1PM-2PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day1.t4} </a><td>
+								<td> <a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day1.t4} </a><td>
 							</tr>
 							<tr>
 								<td>2PM-3PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day1.t5} </a><td>
+								<td> <a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day1.t5} </a><td>
 							</tr>
 							<tr>
 								<td>3PM-4PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day1.t6} </a><td>
+								<td> <a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day1.t6} </a><td>
 							</tr>
 							<tr>
 								<td>4PM-5PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day1.t7} </a><td>
+								<td> <a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day1.t7} </a><td>
 							</tr>
 							<tr>
 								<td>5PM-6PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day1.t8} </a><td>
+								<td> <a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day1.t8} </a><td>
 							</tr>
 							</tbody>
 							</table>
@@ -179,35 +179,35 @@ request.getSession().setAttribute("data", data);
 							<tbody>
 							<tr>
 								<td>10AM-11AM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day2.t21} </a> <td>
+								<td><a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day2.t21} </a> <td>
 							</tr>
 							<tr>
 								<td>11AM-12pM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day2.t22} </a> <td>
+								<td><a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day2.t22} </a> <td>
 							</tr>
 							<tr>
 								<td>12AM-1PM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day2.t23} </a> <td>
+								<td><a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day2.t23} </a> <td>
 							</tr>
 							<tr>
 								<td>1PM-2PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day2.t24} </a><td>
+								<td> <a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day2.t24} </a><td>
 							</tr>
 							<tr>
 								<td>2PM-3PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day2.t25} </a><td>
+								<td> <a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day2.t25} </a><td>
 							</tr>
 							<tr>
 								<td>3PM-4PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day2.t26} </a><td>
+								<td> <a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day2.t26} </a><td>
 							</tr>
 							<tr>
 								<td>4PM-5PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day2.t27} </a><td>
+								<td> <a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day2.t27} </a><td>
 							</tr>
 							<tr>
 								<td>5PM-6PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day2.t28} </a><td>
+								<td> <a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day2.t28} </a><td>
 							</tr>
 							</tbody>
 							</table>
@@ -223,35 +223,35 @@ request.getSession().setAttribute("data", data);
 							<tbody>
 							<tr>
 								<td>10AM-11AM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day3.t31} </a> <td>
+								<td><a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day3.t31} </a> <td>
 							</tr>
 							<tr>
 								<td>11AM-12pM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day3.t32} </a> <td>
+								<td><a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day3.t32} </a> <td>
 							</tr>
 							<tr>
 								<td>12AM-1PM</td>
-								<td><a href="#Availability" onclick="" class="arrow scroll">${data.day3.t33} </a> <td>
+								<td><a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day3.t33} </a> <td>
 							</tr>
 							<tr>
 								<td>1PM-2PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day3.t34} </a><td>
+								<td> <a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day3.t34} </a><td>
 							</tr>
 							<tr>
 								<td>2PM-3PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day3.t35} </a><td>
+								<td> <a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day3.t35} </a><td>
 							</tr>
 							<tr>
 								<td>3PM-4PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day3.t36} </a><td>
+								<td> <a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day3.t36} </a><td>
 							</tr>
 							<tr>
 								<td>4PM-5PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day3.t37} </a><td>
+								<td> <a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day3.t37} </a><td>
 							</tr>
 							<tr>
 								<td>5PM-6PM</td>
-								<td> <a href="#Availability" onclick="" class="arrow scroll">${data.day3.t38} </a><td>
+								<td> <a href="#Availability" onclick="location.href='appointment.jsp'" class="arrow scroll">${data.day3.t38} </a><td>
 							</tr>
 							</tbody>
 							</table>
@@ -263,7 +263,8 @@ request.getSession().setAttribute("data", data);
 
 		
 		</c:forEach>
-		<c:if test="${error ne null }"><tr><td colspan="6" align="center">${error}</td></tr></c:if>									
+		<c:if test="${error ne null }"><tr><td colspan="6" align="center">${error}</td></tr></c:if>	
+										
 	
 			
 			</div>
