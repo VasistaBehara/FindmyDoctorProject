@@ -61,7 +61,7 @@ public String Login(Model model,@RequestParam("email") String email,@RequestPara
 				if(email.equals(patient.get(0).getEmail())&&password.equals(patient.get(0).getPassword()))
 					{
 					model.addAttribute("message","Login Successful !!");
-					jspValue="Appointment";
+					jspValue="appointment";
 				
 					}else {
 						model.addAttribute("error","invalid credentials, try again !!");

@@ -56,17 +56,17 @@ public class FindMyDoctorDao implements IFindMyDoctorDao {
 	}
 	@Override
 	public List<Patient> getPatientDetails(String email) {
-		List<Patient> email = null;
-		String sql ="select Email from Patients where Email like ?;";
+		List<Patient> list2 = null;
+		String sql ="select Email,password from Patients where Email like ?;";
 		Object[] params1 = new Object[] {email};
 		try {
-			email = jdbcTemplate.query(sql,new PatientMapper(),params1 );
+			list2 = jdbcTemplate.query(sql,new PatientMapper(),params1 );
 		} catch (DataAccessException e) {
 			
 			e.printStackTrace();
-			email = null;
+			list2 = null;
 		}
 		
-		return email;
-	
+		return list2;
+	}
 }

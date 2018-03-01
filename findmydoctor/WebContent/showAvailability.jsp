@@ -114,7 +114,7 @@ request.getSession().setAttribute("data", data);
 			
 			
 		<c:forEach items="${list}" var="data">
-		<c:set var="data1" value="${data.docName}" scope="session"></c:set>
+		
 		  <div class="grid_3 grid_5">
 				<h3> ${data.docName}</h3>
 				<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
@@ -264,6 +264,7 @@ request.getSession().setAttribute("data", data);
 		
 		</c:forEach>
 		<c:if test="${error ne null }"><tr><td colspan="6" align="center">${error}</td></tr></c:if>	
+		<c:if test="${message ne null }"><tr><td colspan="6" align="center">${message}</td></tr></c:if>
 										
 	
 			

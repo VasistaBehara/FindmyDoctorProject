@@ -93,9 +93,9 @@
 	</div>
 	<!--//header-bottom-->
 	
-	
-
-        
+	<center >
+<c:if test="${message ne null }"><tr><td colspan="6" align="center">${message}</td></tr></c:if>
+        </center>
 	
 		<div class="banner-bottom">
 		<div class="container">

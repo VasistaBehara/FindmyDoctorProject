@@ -75,18 +75,15 @@
 			</div>
 			
 			<!--//top-nav-->
-			<form class="navbar-form navbar-right" action="search">
-				<div class="form-group">
-				<!-- <select style="width:150px;height:27px;border-radius: 5px;">
-							<option value="volvo">Choose Location</option>
-						  <option value="volvo">Arthur Street</option>
-						  <option value="saab">Edward Street</option>
-						  <option value="opel">Cumberland</option>
-						  <option value="audi">Dawson</option>
-				</select> -->
-				<input type="text" placeholder="Search using Keywords .. Dentist,Gynecologist," name="keyword" id="keyword" style="width:400px;border-radius: 5px;">
-					<button type="submit" class="btn btn-default"></button>
-				</div>		
+			<form class="navbar-form navbar-right" action="login">
+				<input type="text" name="email" class="form-control input-sm chat-input" placeholder="Enter your email" required />
+            <input type="password" name="userPassword" class="form-control input-sm chat-input" placeholder="password" required />
+            
+            <span class="group-btn">     
+                <input type="submit" style=" background-color: #448885;" class="btn btn-primary btn-md" value="Login"><i class="fa fa-sign-in"></i></a>                
+           
+            <input type="button" style=" background-color: #448885" class="btn btn-primary btn-md" onclick="myFunctionAvailability()" value="Signup" ><i class="fa fa-sign-in" ></i></a>
+            	 </span>	
 			</form>
 			<div class="clearfix"> </div>
 		</div>
@@ -95,36 +92,17 @@
 	
 	
 <div style="height:20px"></div>	
-	<div class=".contact-form" >
- 
-        <div class="container">
-          <center>
-            <div class="form-login" style= "width:300Px" >
-            <h3>Welcome back.</h3>
-            <input type="text" id="email" class="form-control input-sm chat-input" placeholder="Enter your email" required />
-            </br>
-            <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" required />
-            </br>
-            <div class="wrapper">
-            <span class="group-btn">     
-                <a href="#" style=" background-color: #448885" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
-                <a href="#" style=" background-color: #448885" class="btn btn-primary btn-md">Cancel <i class="fa fa-sign-in" ></i></a>
-            </span>
-            </div>
-             
-            </div>
-        </center>
-        </div>
-</div>	
 
+<c:forEach items="${list}" var="data">
 
+</c:forEach>
+<c:if test="${error ne null }"><tr><td colspan="6" align="center">${error}</td></tr></c:if>
 
-
-
+<div   class="container" style="border-radius: 55px;width:450px;height:450px" id="register">
 	<div style="height:20px"></div>	
 	
 		<center>
-				<h2>Register Here</h2>
+				<h2>Sign Up</h2>
 			</center>
 			<div  id="Reg" class="form-login">
 			<form align="center" action="Register.jsp">
@@ -137,12 +115,12 @@
 				<input type="text" class="form-control input-sm chat-input" name="Email" title="something@website.com" placeholder="Enter your Email" required /><br>
 				<input type="text" class="form-control input-sm chat-input" name="Phone" pattern="[0-9][0-9]{9}" title="enter 10 digit phone number" placeholder="Enter your phone number" required /><br>
 					<input type="password"  class="form-control input-sm chat-input"name="password" id="passsword" pattern=".{5,}" title="atleast 5 characters"	placeholder="Enter Password" required /><br>
-					<input	type="password" class="form-control input-sm chat-input" name="rpassword" id="rpassword" pattern=".{5,}" title="atleast 5 characters" placeholder="Re Enter Password" onkeyup="validatePassword()" required /><br>
+					<input	type="password" class="form-control input-sm chat-input" name="rpassword" id="rpassword" pattern=".{5,}" title="atleast 5 characters" placeholder="Re Enter Password" required /><br>
 					<input type="submit"  style=" background-color: #448885" class="btn btn-primary btn-md" name="register" value="Register" />
-					 <input class="btn btn-primary btn-md" type="reset" style=" background-color: #448885" value="cancel" />
+					 <input class="btn btn-primary btn-md" type="reset" style=" background-color: #448885" value="Reset" />
 			</form>
 			</div>
-			
+			</div>
 			
 			<style>
 			#Reg {
@@ -150,6 +128,8 @@
 			width: 300px;
 			margin: 0 auto;	
 		}
+		
+		
 	</style>
         
 	
@@ -339,7 +319,7 @@
 		});
 		
 		function myFunctionAvailability() {
-		    var x = document.getElementById("Availability");
+		    var x = document.getElementById("register");
 		    if (x.style.display === "none") {
 		        x.style.display = "block";
 		    } else {
