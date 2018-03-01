@@ -7,6 +7,7 @@ import java.util.List;
 
 import findmydoctor.beans.Availability;
 import findmydoctor.beans.Doctor;
+import findmydoctor.beans.Patient;
 
 /**
  * @author nulak
@@ -16,5 +17,6 @@ public interface IFindMyDoctorDao {
 
 	public List<Doctor> getDoctorDetails(String type);
 	public List<Availability> getAvailabilityDetails(String type);
+	public List<Patient> getPatientDetails(String type);
 
 }

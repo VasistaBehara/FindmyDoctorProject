@@ -94,7 +94,63 @@
 	<!--//header-bottom-->
 	
 	
+<div style="height:20px"></div>	
+	<div class=".contact-form" >
+ 
+        <div class="container">
+          <center>
+            <div class="form-login" style= "width:300Px" >
+            <h3>Welcome back.</h3>
+            <input type="text" id="email" class="form-control input-sm chat-input" placeholder="Enter your email" required />
+            </br>
+            <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" required />
+            </br>
+            <div class="wrapper">
+            <span class="group-btn">     
+                <a href="#" style=" background-color: #448885" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
+                <a href="#" style=" background-color: #448885" class="btn btn-primary btn-md">Cancel <i class="fa fa-sign-in" ></i></a>
+            </span>
+            </div>
+             
+            </div>
+        </center>
+        </div>
+</div>	
 
+
+
+
+
+	<div style="height:20px"></div>	
+	
+		<center>
+				<h2>Register Here</h2>
+			</center>
+			<div  id="Reg" class="form-login">
+			<form align="center" action="Register.jsp">
+				
+				 <input type="text" class="form-control input-sm chat-input" name="Name" pattern="[A-Za-z].{3,}" title="atleast 3 letters" placeholder="Enter your Full Name" required /><br> 
+				 <input type="text" class="form-control input-sm chat-input" name="Age" pattern="[0-9][0-9]" title="enter correct age" placeholder="Enter your Age" required /><br>
+					Gender: <input
+					type="radio" name="Sex" value="m" checked> Male
+					 <input type="radio" name="Sex" value="f"> Female <br>
+				<input type="text" class="form-control input-sm chat-input" name="Email" title="something@website.com" placeholder="Enter your Email" required /><br>
+				<input type="text" class="form-control input-sm chat-input" name="Phone" pattern="[0-9][0-9]{9}" title="enter 10 digit phone number" placeholder="Enter your phone number" required /><br>
+					<input type="password"  class="form-control input-sm chat-input"name="password" id="passsword" pattern=".{5,}" title="atleast 5 characters"	placeholder="Enter Password" required /><br>
+					<input	type="password" class="form-control input-sm chat-input" name="rpassword" id="rpassword" pattern=".{5,}" title="atleast 5 characters" placeholder="Re Enter Password" onkeyup="validatePassword()" required /><br>
+					<input type="submit"  style=" background-color: #448885" class="btn btn-primary btn-md" name="register" value="Register" />
+					 <input class="btn btn-primary btn-md" type="reset" style=" background-color: #448885" value="cancel" />
+			</form>
+			</div>
+			
+			
+			<style>
+			#Reg {
+			border-radius: 12px;
+			width: 300px;
+			margin: 0 auto;	
+		}
+	</style>
         
 	
 		<div class="banner-bottom">

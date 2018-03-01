@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import findmydoctor.beans.Availability;
 import findmydoctor.beans.Doctor;
+import findmydoctor.beans.Patient;
 import findmydoctor.service.FindMyDoctorService;
 
 /**
@@ -41,8 +42,41 @@ public String SearchAvailability(Model model,@RequestParam("availability") Strin
 		if(day != null ) {
 			model.addAttribute("list",day);
 		} else {
-			model.addAttribute("error","Sorry unable to find doctors !!");
+			model.addAttribute("error","Sorry unable to find availability !!");
 		}
 		return "showAvailability";
 	}
+	
+	
+	@RequestMapping(value="login")
+public String Login(Model model,@RequestParam("email") String email,@RequestParam("userPassword") String password) {		
+		
+		List<Patient> patient = findMyDoctorService.getPatientDetails(email);
+		String jspValue=null;
+		if(patient != null ) {
+			model.addAttribute("list",patient);
+			
+			try {
+				
+				if(email.equals(patient.get(0).getEmail())&&password.equals(patient.get(0).getPassword()))
+					{
+					model.addAttribute("message","Login Successful !!");
+					jspValue="Appointment";
+				
+					}else {
+						model.addAttribute("error","invalid credentials, try again !!");
+						jspValue="login";
+					}
+				
+			} catch (Exception e) {				
+				
+				// TODO: handle exception
+			}
+		} else {
+			model.addAttribute("error","you are not registered!!");
+			jspValue="login";
+		}
+		return jspValue;
+	}
+	
 }

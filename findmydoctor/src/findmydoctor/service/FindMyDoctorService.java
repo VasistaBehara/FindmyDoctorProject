@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import findmydoctor.beans.Availability;
 import findmydoctor.beans.Doctor;
+import findmydoctor.beans.Patient;
 import findmydoctor.dao.IFindMyDoctorDao;
 
 /**
@@ -31,5 +32,9 @@ public class FindMyDoctorService {
 		return findMyDoctorDao.getAvailabilityDetails(type);
 	}
 	
+	public List<Patient> getPatientDetails(String type) {
+		
+		return findMyDoctorDao.getPatientDetails(type);
+	}
 	
 }

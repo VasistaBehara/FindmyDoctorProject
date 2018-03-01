@@ -4,7 +4,7 @@
 package findmydoctor.beans;
 
 /**
- * @author nulak
+ * @author
  *
  */
 public class Doctor {

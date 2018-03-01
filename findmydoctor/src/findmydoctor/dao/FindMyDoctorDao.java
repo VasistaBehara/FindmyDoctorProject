@@ -12,11 +12,13 @@ import org.springframework.stereotype.Component;
 
 import findmydoctor.beans.Availability;
 import findmydoctor.beans.Doctor;
+import findmydoctor.beans.Patient;
 import findmydoctor.mapper.AvailabilityMapper;
 import findmydoctor.mapper.DoctorMapper;
+import findmydoctor.mapper.PatientMapper;
 
 /**
- * @author nulak
+ * @author 
  *
  */
 @Component("findMyDoctorDao")
@@ -52,5 +54,19 @@ public class FindMyDoctorDao implements IFindMyDoctorDao {
 		
 		return list1;
 	}
+	@Override
+	public List<Patient> getPatientDetails(String email) {
+		List<Patient> email = null;
+		String sql ="select Email from Patients where Email like ?;";
+		Object[] params1 = new Object[] {email};
+		try {
+			email = jdbcTemplate.query(sql,new PatientMapper(),params1 );
+		} catch (DataAccessException e) {
+			
+			e.printStackTrace();
+			email = null;
+		}
+		
+		return email;
 	
 }
