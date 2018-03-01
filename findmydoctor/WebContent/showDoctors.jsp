@@ -57,7 +57,7 @@
 					<!-- <li><a href="about.jsp"> <span data-hover="About">About</span></a></li> -->
 					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
 					<!-- <li><a href="news.jsp" class="active"> <span data-hover="News">News</span></a></li> -->
-					<li><a href="contact.jsp"> <span data-hover="Contact">Contact</span></a></li>
+					<!-- <li><a href="contact.jsp"> <span data-hover="Contact">Contact</span></a></li> -->
 				</ul>
 				<!-- script-for-menu -->
 				<script>
@@ -266,7 +266,7 @@
 				<div class="clearfix"> </div>
 			</div>
 
-	
+	<div style="height:30px"></div>
 <!--map-->
 	<div class="map">
 		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42359.707447887675!2d-89.28481132638942!3d48.428093737274445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d5921908097eeb5%3A0x1c222f6404947a1d!2sThunder+Bay%2C+ON+P7B!5e0!3m2!1sen!2sca!4v1519401233843" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -283,55 +283,7 @@
 	</div>
 	<!--//map-->
 	
-	
-	<!--footer-->
-	<div class="footer">
-		<div class="container">
-			<div class="footer-grids">				
-				<div class="col-md-4 recent-posts">
-					<h4>Recent posts</h4>
-					<div class="recent-posts-text">
-						<h5>MARCH 30, 2018</h5>
-						<p>New doctors are added</p>
-					</div>
-					<div class="recent-posts-text">
-						<h5>MARCH 15, 2018</h5>
-						<p>Added support for getting appointment</p>
-					</div>
-					<div class="recent-posts-text">
-						<h5>MARCH 3, 2018</h5>
-						<p>added doctor prices</p>
-					</div>
-				</div>
-				<div class="col-md-4 recent-posts">
-					<h4>Twitter feeds</h4>
-					<div class="recent-posts-text">
-						<h5>about 2 days ago<span>@kristina</span></h5>
-						<p>Good work</p>
-					</div>
-					<div class="recent-posts-text">
-						<h5>about 4 days ago <span>@george</span></h5>
-						<p>Thanks! , this is useful</p>
-					</div>
-					<div class="recent-posts-text">
-						<h5>about 1 week ago <span>@lilly</span> </h5>
-						<p>Need more work....</p>
-					</div>
-				</div>
-				<div class="col-md-4 recent-posts">
-					<h4>Our address</h4>
-					<p class="adrs">For more details, questions these can be used to contact us </p>
-					<ul>
-						<li><span></span>oliver road, Lakehead university</li>
-						<li><span class="ph-no"></span>+1 (807) 888 8888</li>
-						<li><span class="mail"></span><a href="mailto:example@mail.com">example@lakeheadu.ca</a></li>
-					</ul>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>	
-	</div>	
-	<!--//footer-->
+
 	
 	<div class="footer-bottom">
 		<div class="container">

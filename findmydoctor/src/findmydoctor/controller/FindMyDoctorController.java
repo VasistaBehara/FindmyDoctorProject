@@ -69,7 +69,8 @@ public String Login(Model model,@RequestParam("email") String email,@RequestPara
 					}
 				
 			} catch (Exception e) {				
-				
+				model.addAttribute("error","you are not registered!!");
+				jspValue="login";
 				// TODO: handle exception
 			}
 		} else {

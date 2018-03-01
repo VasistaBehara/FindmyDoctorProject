@@ -1,3 +1,9 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,8 +41,8 @@
 				<a href="index.html"><img src="images/Image1.png" alt="logo"/></a>					
 			</div>
 			<div class="header-info">
-				<p>Information Service:</p>
-				<h4>+1 807-888-8888</h4>
+		<!-- 		<p>Information Service:</p>
+				<h4>+1 807-888-8888</h4> -->
 			</div>			
 			<div class="clearfix"> </div>
 		</div>	
@@ -53,7 +59,7 @@
 					<li><a href="about.jsp"> <span data-hover="About">About</span></a></li>
 					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
 					<!-- <li><a href="news.jsp"> <span data-hover="News">News</span></a></li> -->
-					<li><a href="contact.jsp"> <span data-hover="Contact">Contact</span></a></li>
+					<!-- <li><a href="contact.jsp"> <span data-hover="Contact">Contact</span></a></li> -->
 				</ul>
 				<!-- script-for-menu -->
 				<script>

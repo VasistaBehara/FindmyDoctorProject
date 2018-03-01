@@ -52,8 +52,8 @@
 				<a href="index.html"><img src="images/Image1.png" alt="logo"/></a>					
 			</div>
 			<div class="header-info">
-				<p>Information Service:</p>
-				<h4>+1 807-888-8888</h4>
+		<!-- 		<p>Information Service:</p>
+				<h4>+1 807-888-8888</h4> -->
 			</div>			
 			<div class="clearfix"> </div>
 		</div>	
@@ -70,7 +70,7 @@
 					<!-- <li><a href="about.jsp"> <span data-hover="About">About</span></a></li> -->
 					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
 					<!-- <li><a href="news.jsp"> <span data-hover="News">News</span></a></li> -->
-					<li><a href="contact.jsp"> <span data-hover="Contact">Contact</span></a></li>
+					<!-- <li><a href="contact.jsp"> <span data-hover="Contact">Contact</span></a></li> -->
 				</ul>
 				<!-- script-for-menu -->
 				<script>
@@ -272,54 +272,7 @@
 	<!--//map-->
 	
 	
-	<!--footer-->
-	<div class="footer">
-		<div class="container">
-			<div class="footer-grids">				
-				<div class="col-md-4 recent-posts">
-					<h4>Recent posts</h4>
-					<div class="recent-posts-text">
-						<h5>MARCH 30, 2018</h5>
-						<p>New doctors are added</p>
-					</div>
-					<div class="recent-posts-text">
-						<h5>MARCH 15, 2018</h5>
-						<p>Added support for getting appointment</p>
-					</div>
-					<div class="recent-posts-text">
-						<h5>MARCH 3, 2018</h5>
-						<p>added doctor prices</p>
-					</div>
-				</div>
-				<div class="col-md-4 recent-posts">
-					<h4>Twitter feeds</h4>
-					<div class="recent-posts-text">
-						<h5>about 2 days ago<span>@kristina</span></h5>
-						<p>Good work</p>
-					</div>
-					<div class="recent-posts-text">
-						<h5>about 4 days ago <span>@george</span></h5>
-						<p>Thanks! , this is useful</p>
-					</div>
-					<div class="recent-posts-text">
-						<h5>about 1 week ago <span>@lilly</span> </h5>
-						<p>Need more work....</p>
-					</div>
-				</div>
-				<div class="col-md-4 recent-posts">
-					<h4>Our address</h4>
-					<p class="adrs">For more details, questions these can be used to contact us </p>
-					<ul>
-						<li><span></span>oliver road, Lakehead university</li>
-						<li><span class="ph-no"></span>+1 (807) 888 8888</li>
-						<li><span class="mail"></span><a href="mailto:example@mail.com">example@lakeheadu.ca</a></li>
-					</ul>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>	
-	</div>	
-	<!--//footer-->
+	
 	
 	<div class="footer-bottom">
 		<div class="container">
