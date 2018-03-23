@@ -105,7 +105,7 @@
 				<h2>Sign Up</h2>
 			</center>
 			<div  id="Reg" class="form-login">
-			<form align="center" action="Register.jsp">
+			<form align="center" action="login.jsp" onsubmit="Validate()" >
 				
 				 <input type="text" class="form-control input-sm chat-input" name="Name" pattern="[A-Za-z].{3,}" title="atleast 3 letters" placeholder="Enter your Full Name" required /><br> 
 				 <input type="text" class="form-control input-sm chat-input" name="Age" pattern="[0-9][0-9]" title="enter correct age" placeholder="Enter your Age" required /><br>
@@ -115,8 +115,8 @@
 				<input type="text" class="form-control input-sm chat-input" name="Email" title="something@website.com" placeholder="Enter your Email" required /><br>
 				<input type="text" class="form-control input-sm chat-input" name="Phone" pattern="[0-9][0-9]{9}" title="enter 10 digit phone number" placeholder="Enter your phone number" required /><br>
 					<input type="password"  class="form-control input-sm chat-input"name="password" id="passsword" pattern=".{5,}" title="atleast 5 characters"	placeholder="Enter Password" required /><br>
-					<input	type="password" class="form-control input-sm chat-input" name="rpassword" id="rpassword" pattern=".{5,}" title="atleast 5 characters" placeholder="Re Enter Password" required /><br>
-					<input type="submit"  style=" background-color: #448885" class="btn btn-primary btn-md" name="register" value="Register" />
+					<input	type="password" class="form-control input-sm chat-input" name="rpassword" id="confirm_password" pattern=".{5,}" title="atleast 5 characters" placeholder="Re Enter Password" required /><br>
+					<input type="submit"  style=" background-color: #448885" class="btn btn-primary btn-md" name="register" value="Register"  />
 					 <input class="btn btn-primary btn-md" type="reset" style=" background-color: #448885" value="Reset" />
 			</form>
 			</div>
@@ -279,6 +279,19 @@
 		        x.style.display = "none";
 		    }
 		}
+		
+		
+		function Validate() {
+	        var password = document.getElementById("password").value;
+	        var confirmPassword = document.getElementById("confirm_password").value;
+	        if (password != confirmPassword) {
+	            alert("Passwords do not match.");
+	            /* return false; */
+	        }
+	       /*  return true; */
+	    }
+		
+		
 	</script>
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 	<!--//smooth-scrolling-of-move-up-->

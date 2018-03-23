@@ -28,10 +28,22 @@ public class FindMyDoctorDao implements IFindMyDoctorDao {
 	@Override
 	public List<Doctor> getDoctorDetails(String type) {
 		List<Doctor> list = null;
-		String sql ="select docId,Name,Age,Department,Location,rating,Pricing from doctor d where Department like ?";
-		Object[] params = new Object[] {type};
+		String sql ="select docId,Name,Age,Department,Location,rating,Pricing from doctor d where Department like '%" + type + "%'";
+		String sql2 ="select docId,Name,Age,Department,Location,rating,Pricing from doctor d where Name like '%" + type + "%'";
+		String sql3 ="select docId,Name,Age,Department,Location,rating,Pricing from doctor d where Location like '%" + type + "%'";
+		//Object[] params = new Object[] {type};
 		try {
-			list = jdbcTemplate.query(sql,new DoctorMapper(),params );
+			list = jdbcTemplate.query(sql,new DoctorMapper());
+			
+			if (list.isEmpty())
+			{
+				
+				list = jdbcTemplate.query(sql2,new DoctorMapper() );
+					if (list.isEmpty())
+				{
+					list = jdbcTemplate.query(sql3,new DoctorMapper() );
+				}
+			}
 		} catch (DataAccessException e) {
 			
 			e.printStackTrace();
