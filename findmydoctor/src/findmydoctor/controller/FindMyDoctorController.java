@@ -16,10 +16,7 @@ import findmydoctor.beans.Doctor;
 import findmydoctor.beans.Patient;
 import findmydoctor.service.FindMyDoctorService;
 
-/**
- * @author nulak
- *
- */
+
 @Controller
 public class FindMyDoctorController {
 	@Autowired
@@ -78,6 +75,20 @@ public String Login(Model model,@RequestParam("email") String email,@RequestPara
 			jspValue="login";
 		}
 		return jspValue;
+	}
+	
+	@RequestMapping(value="register")
+	public String Register(Model model,@RequestParam("Email") String email,@RequestParam("password") String password,@RequestParam("Name") String Name, @RequestParam("Age") String Age, @RequestParam("Sex") String Sex, @RequestParam("Phone") String Phone) {		
+			
+			List<Patient> patient = findMyDoctorService.setPatientDetails(email,password,Name,Age,Sex,Phone);
+			if(patient != null ) {
+				model.addAttribute("message","Login Successful !!");
+			}
+					else {
+						model.addAttribute("error","no details entered");
+					}
+					return "appointment";
+			
 	}
 	
 }

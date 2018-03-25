@@ -52,8 +52,8 @@
 				<a href="index.html"><img src="images/Image1.png" alt="logo"/></a>					
 			</div>
 			<div class="header-info">
-				<p>Information Service:</p>
-				<h4>+1 807-888-8888</h4>
+		<!-- 		<p>Information Service:</p>
+				<h4>+1 807-888-8888</h4> -->
 			</div>			
 			<div class="clearfix"> </div>
 		</div>	
@@ -67,10 +67,10 @@
 				<span class="menu-icon"><img src="images/menu-icon.png" alt=""/></span>		
 				<ul class="nav1">
 					<li><a href="index.jsp" class="active"><span data-hover="Home">Home</span></a></li>
-					<li><a href="about.jsp"> <span data-hover="About">About</span></a></li>
+					<!-- <li><a href="about.jsp"> <span data-hover="About">About</span></a></li> -->
 					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
 					<!-- <li><a href="news.jsp"> <span data-hover="News">News</span></a></li> -->
-					<li><a href="contact.jsp"> <span data-hover="Contact">Contact</span></a></li>
+					<!-- <li><a href="contact.jsp"> <span data-hover="Contact">Contact</span></a></li> -->
 				</ul>
 				<!-- script-for-menu -->
 				<script>
@@ -104,7 +104,7 @@
 	<div class="services" id="services">
 	<div class="grid_3 grid_5" style="border: 1px solid black;border-radius: 55px;height:150px">
 		<div class="container">
-		<h3  style="font-size: 2em">Top Doctor Specialities In Thunderbay</h3>
+		<h3  style="font-size: 2em">Top Doctors In Thunderbay</h3>
 				<div style="height:13px"> </div>
 				<form action="search" >				        
        			  <input type="hidden" name="keyword"  id="Dentist" value="Dentist">
@@ -163,7 +163,7 @@
 							</a>
 						</div>
 						<div class="caption services-caption">
-							<h4><a href="#">Doctors</a></h4>
+							<h4><a href="doctorsSpecialization.jsp">Doctors</a></h4>
 							<p>Find the best available doctor near your location</p>				
 						</div>
 					</div>
@@ -189,50 +189,12 @@
 							</a>
 						</div>
 						<div class="caption services-caption">
-							<h4><a href="#">Clinics</a></h4>
+							<h4><a href="clinicSpecialization.jsp">Clinics</a></h4>
 							<p>Cras justo odioda pibus facilisis dignissimos voluptatem accusantium</p>				
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-4 services-grids">
-					<div class="thumbnail">
-						<div class="moments-bottom">
-							<a href="images/img12.jpg">
-								<img src="images/img12.jpg" class="img-responsive zoom-img " alt="">				
-							</a>
-						</div>
-						<div class="caption services-caption">
-							<h4><a href="#">Laboratories</a></h4>
-							<p>Cras justo odioda pibus facilisis dignissimos voluptatem accusantium</p>				
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-4 services-grids">
-					<div class="thumbnail">
-						<div class="moments-bottom">
-							<a href="images/img14.jpg">
-								<img src="images/img14.jpg" class="img-responsive zoom-img " alt="">				
-							</a>
-						</div>
-						<div class="caption services-caption">
-							<h4><a href="#">Treatments</a></h4>
-							<p>Cras justo odioda pibus facilisis dignissimos voluptatem accusantium</p>				
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-4 services-grids">
-					<div class="thumbnail">
-						<div class="moments-bottom">
-							<a href="images/img13.jpg">
-								<img src="images/img13.jpg" class="img-responsive zoom-img " alt="">				
-							</a>
-						</div>
-						<div class="caption services-caption">
-							<h4><a href="#">Pharmacy</a></h4>
-							<p>Cras justo odioda pibus facilisis dignissimos voluptatem accusantium</p>				
-						</div>
-					</div>
-				</div>
+				
 
 				<div class="clearfix"> </div>
 			</div>
@@ -254,11 +216,29 @@
 		</div>
 	</div>	
 	
-
+	
+<!--map-->
+	<div class="map">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42359.707447887675!2d-89.28481132638942!3d48.428093737274445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d5921908097eeb5%3A0x1c222f6404947a1d!2sThunder+Bay%2C+ON+P7B!5e0!3m2!1sen!2sca!4v1519401233843" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+		<div class="container">	
+			<div class="map-info">
+				<ul>
+					<li>Head office</li>
+					<li>Arthur Street-2235</li>
+					<li>Thunderbay,Canada-P7E5P9</li>
+					<li>807 356 6578</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--//map-->
+	
+	
+	
 	
 	<div class="footer-bottom">
 		<div class="container">
-			<p>Copyright © 2018 FindMyDoctor . All rights reserved </p>
+			<p>Copyright © 2015 Doctor Plus. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
 		</div>
 	</div>
 	<!--smooth-scrolling-of-move-up-->

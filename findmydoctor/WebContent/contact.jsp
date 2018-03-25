@@ -1,11 +1,13 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
 <html>
 <head>
-<title>Find My Doctor | News</title>
+<title>Find My Doctor | Contact</title>
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
 <!-- Custom Theme files -->
@@ -28,12 +30,8 @@
 				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 			});
 		});
-		
-		
 </script>
 <!--//end-smoth-scrolling-->
-
-
 </head>
 <body>
 	<!--header-->
@@ -43,8 +41,8 @@
 				<a href="index.html"><img src="images/Image1.png" alt="logo"/></a>					
 			</div>
 			<div class="header-info">
-		<!-- 		<p>Appointment Page</p>
-				<h4>+1-807-356-5161</h4> -->
+			<!-- 	<p>Information Service:</p>
+				<h4>+1 807-888-8888</h4> -->
 			</div>			
 			<div class="clearfix"> </div>
 		</div>	
@@ -60,8 +58,8 @@
 					<li><a href="index.jsp"><span data-hover="Home">Home</span></a></li>
 					<!-- <li><a href="about.jsp"> <span data-hover="About">About</span></a></li> -->
 					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
-					<!-- <li><a href="news.jsp" class="active"> <span data-hover="News">News</span></a></li> -->
-					<!-- <li><a href="contact.jsp"> <span data-hover="Contact">Contact</span></a></li> -->
+					<!-- <li><a href="news.jsp"> <span data-hover="News">News</span></a></li> -->
+					<!-- <li><a href="contact.jsp" class="active"> <span data-hover="Contact">Contact</span></a></li> -->
 				</ul>
 				<!-- script-for-menu -->
 				<script>
@@ -70,10 +68,9 @@
 					 // Animation complete.
 					  });
 					 });
-				</script>
+				</script>	
 				<!-- /script-for-menu -->
 			</div>
-			
 			<!--//top-nav-->
 			<form class="navbar-form navbar-right" action="search">
 				<div class="form-group">
@@ -84,7 +81,7 @@
 						  <option value="opel">Cumberland</option>
 						  <option value="audi">Dawson</option>
 				</select> -->
-				<input type="text" placeholder="Search using Keywords .. Dentist,Gynecologist," name="keyword" id="keyword" style="width:400px;border-radius: 5px;">
+				<input type="text" placeholder="Search using Keywords .. Dentist,Gynecologist,Pediatrician" name="keyword" id="keyword" style="width:400px;border-radius: 5px;">
 					<button type="submit" class="btn btn-default"></button>
 				</div>		
 			</form>
@@ -92,69 +89,30 @@
 		</div>
 	</div>
 	<!--//header-bottom-->
-	
-	<center >
-<c:if test="${message ne null }"><tr><td colspan="6" align="center">${message}</td></tr></c:if>
-        </center>
-	
-		<div class="banner-bottom">
+	<!--contact-->
+	<div class="contact">
 		<div class="container">
-			<h2> Search for the services</h2>
-			<a href="#services" class="arrow scroll"> </a>
+			<h3>Contact us</h3>
+			<div class="contact-form">
+				<form>
+					<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+					<div class="col-md-6 cnt-inpt">
+						<input type="email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+					</div>
+					<div class="col-md-6 cnt-inpt">
+						<input type="text" value="Telephone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telephone';}" required="">
+					</div>
+					<div class="clearfix"> </div>
+					<textarea onfocus="this.value = '' ;" onblur="if (this.value == '') {this.value = 'Message...';}" required=""> Message... </textarea>
+					<input type="submit" value="submit">
+				</form>
+			</div>
 		</div>
 	</div>
+	<!--//contact-->
 	
-	<!--services-->
-	<div class="services" id="services">
-		<div class="container">
-			<h3>Services</h3>
-			<div class="row services-info">			
-				<div class="col-sm-6 col-md-4 services-grids">
-					<div class="thumbnail">
-						<div class="moments-bottom">
-							<a href="images/img9.jpg">
-								<img src="images/img9.jpg" class="img-responsive zoom-img " alt="">				
-							</a>
-						</div>
-						<div class="caption services-caption">
-							<h4><a href="doctorsSpecialization.jsp">Doctors</a></h4>
-											
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-4 services-grids">
-					<div class="thumbnail">
-						<div class="moments-bottom">
-							<a href="images/hospital.jpg">
-								<img src="images/hospital.jpg" class="img-responsive zoom-img " alt="">				
-							</a>
-						</div>
-						<div class="caption services-caption">
-							<h4><a href="hospitalSpecialization.jsp">Hospitals</a></h4>
-											
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-4 services-grids">
-					<div class="thumbnail">
-						<div class="moments-bottom">
-							<a href="images/Clinic.jpg">
-								<img src="images/Clinic.jpg" class="img-responsive zoom-img " alt="">				
-							</a>
-						</div>
-						<div class="caption services-caption">
-							<h4><a href="clinicSpecialization.jsp">Clinics</a></h4>
-											
-						</div>
-					</div>
-				</div>
-				
-
-				<div class="clearfix"> </div>
-			</div>
-
 	
-<!--map-->
+	<!--map-->
 	<div class="map">
 		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42359.707447887675!2d-89.28481132638942!3d48.428093737274445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d5921908097eeb5%3A0x1c222f6404947a1d!2sThunder+Bay%2C+ON+P7B!5e0!3m2!1sen!2sca!4v1519401233843" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 		<div class="container">	
@@ -170,18 +128,16 @@
 	</div>
 	<!--//map-->
 	
+	
 
 	
 	<div class="footer-bottom">
 		<div class="container">
-			<p>Copyright ©  2018 Find My Doctor. All rights reserved </p>
+			<p>Copyright Â©  2018 Find My Doctor . All rights reserved </p>
 		</div>
 	</div>
 	<!--smooth-scrolling-of-move-up-->
 	<script type="text/javascript">
-	
-	
-	
 		$(document).ready(function() {
 			/*
 			var defaults = {
@@ -195,15 +151,6 @@
 			$().UItoTop({ easingType: 'easeOutQuart' });
 			
 		});
-		
-		function myFunctionAvailability() {
-		    var x = document.getElementById("Availability");
-		    if (x.style.display === "none") {
-		        x.style.display = "block";
-		    } else {
-		        x.style.display = "none";
-		    }
-		}
 	</script>
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 	<!--//smooth-scrolling-of-move-up-->

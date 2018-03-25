@@ -3,10 +3,7 @@
  */
 package findmydoctor.beans;
 
-/**
- * @author
- *
- */
+
 public class Doctor {
 	private int docId;
 	private String name;
@@ -15,6 +12,9 @@ public class Doctor {
 	private String location;
 	private String rating;
 	private Availability availability;
+	private String Hname;
+	private String Cname;
+	
 	/**
 	 * @return the name
 	 */
@@ -94,13 +94,26 @@ public class Doctor {
 	public void setDocId(int docId) {
 		this.docId = docId;
 	}
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
 		return "Doctor [name=" + name + ", age=" + age + ", department=" + department + ", location=" + location
-				+ ", rating=" + rating + ", availability=" + availability + ", docId=" + docId + "]";
+				+ ", rating=" + rating + ", availability=" + availability + ", docId=" + docId + " , Hname=" + Hname + ", Cname=" + Cname +" ]";
+	}
+	public String getHname() {
+		return Hname;
+	}
+	public void setHname(String hname) {
+		Hname = hname;
+	}
+	public String getCname() {
+		return Cname;
+	}
+	public void setCname(String cname) {
+		Cname = cname;
 	}
 	
 

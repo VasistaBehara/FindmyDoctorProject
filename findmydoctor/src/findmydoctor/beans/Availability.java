@@ -3,10 +3,7 @@
  */
 package findmydoctor.beans;
 
-/**
- * @author nulak
- *
- */
+
 public class Availability {
 
 	private Day1 Day1;

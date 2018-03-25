@@ -28,9 +28,11 @@ public class FindMyDoctorDao implements IFindMyDoctorDao {
 	@Override
 	public List<Doctor> getDoctorDetails(String type) {
 		List<Doctor> list = null;
-		String sql ="select docId,Name,Age,Department,Location,rating,Pricing from doctor d where Department like '%" + type + "%'";
-		String sql2 ="select docId,Name,Age,Department,Location,rating,Pricing from doctor d where Name like '%" + type + "%'";
-		String sql3 ="select docId,Name,Age,Department,Location,rating,Pricing from doctor d where Location like '%" + type + "%'";
+		String sql ="select docId,Name,Age,Department,Location,rating,Pricing,HName,CName from doctor d where Department like '%" + type + "%'";
+		String sql2 ="select docId,Name,Age,Department,Location,rating,Pricing,HName,CName from doctor d where Name like '%" + type + "%'";
+		String sql3 ="select docId,Name,Age,Department,Location,rating,Pricing,HName,CName from doctor d where Location like '%" + type + "%'";
+		String sql4 ="select docId,Name,Age,Department,Location,rating,Pricing,HName,CName from doctor d where HName like '%" + type + "%'";
+		String sql5 ="select docId,Name,Age,Department,Location,rating,Pricing,HName,CName from doctor d where CName like '%" + type + "%'";
 		//Object[] params = new Object[] {type};
 		try {
 			list = jdbcTemplate.query(sql,new DoctorMapper());
@@ -42,6 +44,15 @@ public class FindMyDoctorDao implements IFindMyDoctorDao {
 					if (list.isEmpty())
 				{
 					list = jdbcTemplate.query(sql3,new DoctorMapper() );
+					if (list.isEmpty())
+					{
+						list = jdbcTemplate.query(sql4,new DoctorMapper() );
+						if (list.isEmpty())
+						{
+							list = jdbcTemplate.query(sql5,new DoctorMapper() );
+							
+						}
+					}
 				}
 			}
 		} catch (DataAccessException e) {
@@ -69,8 +80,10 @@ public class FindMyDoctorDao implements IFindMyDoctorDao {
 	@Override
 	public List<Patient> getPatientDetails(String email) {
 		List<Patient> list2 = null;
-		String sql ="select Email,password from Patients where Email like ?;";
+		String sql ="select Email,password from patients where Email like ?;";
+		
 		Object[] params1 = new Object[] {email};
+		
 		try {
 			list2 = jdbcTemplate.query(sql,new PatientMapper(),params1 );
 		} catch (DataAccessException e) {
@@ -81,4 +94,19 @@ public class FindMyDoctorDao implements IFindMyDoctorDao {
 		
 		return list2;
 	}
+	@Override
+	public List<Patient> setPatientDetails(String email,String password,String name,String age,String sex,String phone) {
+		List<Patient> list2 = null;		
+		try {
+			jdbcTemplate.update("INSERT INTO patients (Name, Age, Email, Phone, Sex, Password) VALUES (?, ?, ?, ?, ?, ?)",name,age,email,phone,sex,password);
+		} catch (DataAccessException e) {
+			
+			e.printStackTrace();
+			list2 = null;
+		}
+		
+		return list2;
+	}
+	
+	
 }

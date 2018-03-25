@@ -37,4 +37,8 @@ public class FindMyDoctorService {
 		return findMyDoctorDao.getPatientDetails(type);
 	}
 	
+	public List<Patient> setPatientDetails(String email, String password, String name, String age, String sex, String phone) {
+		
+		return findMyDoctorDao.setPatientDetails(email,password,name,age,sex,phone);
+	}
 }

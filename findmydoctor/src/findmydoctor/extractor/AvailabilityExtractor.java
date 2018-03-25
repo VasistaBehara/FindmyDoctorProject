@@ -2,8 +2,6 @@ package findmydoctor.extractor;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Iterator;
-
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
 
@@ -11,7 +9,6 @@ import findmydoctor.beans.Availability;
 import findmydoctor.beans.Day1;
 import findmydoctor.beans.Day2;
 import findmydoctor.beans.Day3;
-import findmydoctor.beans.Doctor;
 
 public class AvailabilityExtractor implements ResultSetExtractor<Availability>{
 	

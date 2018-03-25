@@ -1,13 +1,12 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Find My Doctor | News</title>
+<title>Find My Doctor | Doctors Specialization</title>
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+<link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen">				
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -28,12 +27,22 @@
 				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 			});
 		});
-		
-		
 </script>
 <!--//end-smoth-scrolling-->
-
-
+<style type="text/css">
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
 </head>
 <body>
 	<!--header-->
@@ -43,8 +52,8 @@
 				<a href="index.html"><img src="images/Image1.png" alt="logo"/></a>					
 			</div>
 			<div class="header-info">
-			<!-- 	<p>Appointment Page</p>
-				<h4>+1-807-356-5161</h4> -->
+		<!-- 		<p>Information Service:</p>
+				<h4>+1 807-888-8888</h4> -->
 			</div>			
 			<div class="clearfix"> </div>
 		</div>	
@@ -57,10 +66,10 @@
 			<div class="top-nav cl-effect-5">
 				<span class="menu-icon"><img src="images/menu-icon.png" alt=""/></span>		
 				<ul class="nav1">
-					<li><a href="index.jsp"><span data-hover="Home">Home</span></a></li>
+					<li><a href="index.jsp" class="active"><span data-hover="Home">Home</span></a></li>
 					<!-- <li><a href="about.jsp"> <span data-hover="About">About</span></a></li> -->
 					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
-					<!-- <li><a href="news.jsp" class="active"> <span data-hover="News">News</span></a></li> -->
+					<!-- <li><a href="news.jsp"> <span data-hover="News">News</span></a></li> -->
 					<!-- <li><a href="contact.jsp"> <span data-hover="Contact">Contact</span></a></li> -->
 				</ul>
 				<!-- script-for-menu -->
@@ -73,101 +82,91 @@
 				</script>
 				<!-- /script-for-menu -->
 			</div>
-			
 			<!--//top-nav-->
-			<form class="navbar-form navbar-right" action="login">
-				<input type="text" name="email" class="form-control input-sm chat-input" placeholder="Enter your email" required />
-            <input type="password" name="userPassword" class="form-control input-sm chat-input" placeholder="password" required />
-            
-            <span class="group-btn">     
-                <input type="submit" style=" background-color: #448885;" class="btn btn-primary btn-md" value="Login"><i class="fa fa-sign-in"></i></a>                
-           
-            <input type="button" style=" background-color: #448885" class="btn btn-primary btn-md" onclick="myFunctionAvailability()" value="Signup" ><i class="fa fa-sign-in" ></i></a>
-            	 </span>	
+			<form class="navbar-form navbar-right" action="search">
+				<div class="form-group">
+				<!-- <select style="width:150px;height:27px;border-radius: 5px;">
+							<option value="volvo">Choose Location</option>
+						  <option value="volvo">Arthur Street</option>
+						  <option value="saab">Edward Street</option>
+						  <option value="opel">Cumberland</option>
+						  <option value="audi">Dawson</option>
+				</select> -->
+				<input type="text" placeholder="Search using Keywords .. Dentist,Gynecologist" name="keyword" id="keyword" style="width:400px;border-radius: 5px;">
+					<button type="submit" class="btn btn-default"></button>
+				</div>		
 			</form>
 			<div class="clearfix"> </div>
 		</div>
 	</div>
 	<!--//header-bottom-->
 	
-	
-<div style="height:20px"></div>	
-
-<c:forEach items="${list}" var="data">
-
-</c:forEach>
-<c:if test="${error ne null }"><tr><td colspan="6" align="center">${error}</td></tr></c:if>
-
-<div   class="container" style="border-radius: 55px;width:450px;height:450px" id="register">
-	<div style="height:20px"></div>	
-	
-		<center>
-				<h2>Sign Up</h2>
-			</center>
-			<div  id="Reg" class="form-login">
-			<form align="center" action="register" onsubmit="Validate()" >
-				
-				 <input type="text" class="form-control input-sm chat-input" name="Name" pattern="[A-Za-z].{3,}" title="atleast 3 letters" placeholder="Enter your Full Name" required /><br> 
-				 <input type="text" class="form-control input-sm chat-input" name="Age" pattern="[0-9][0-9]" title="enter correct age" placeholder="Enter your Age" required /><br>
-					Gender: <input
-					type="radio" name="Sex" value="m" checked> Male
-					 <input type="radio" name="Sex" value="f"> Female <br>
-				<input type="text" class="form-control input-sm chat-input" name="Email" title="something@website.com" placeholder="Enter your Email" required /><br>
-				<input type="text" class="form-control input-sm chat-input" name="Phone" pattern="[0-9][0-9]{9}" title="enter 10 digit phone number" placeholder="Enter your phone number" required /><br>
-					<input type="password"  class="form-control input-sm chat-input"name="password" id="passsword" pattern=".{5,}" title="atleast 5 characters"	placeholder="Enter Password" required /><br>
-					<input	type="password" class="form-control input-sm chat-input" name="rpassword" id="confirm_password" pattern=".{5,}" title="atleast 5 characters" placeholder="Re Enter Password" required /><br>
-					<input type="submit"  style=" background-color: #448885" class="btn btn-primary btn-md" name="register" value="Register"  />
-					 <input class="btn btn-primary btn-md" type="reset" style=" background-color: #448885" value="Reset" />
-			</form>
-			</div>
-			</div>
-			
-			<style>
-			#Reg {
-			border-radius: 12px;
-			width: 300px;
-			margin: 0 auto;	
-		}
-		
-		
-	</style>
-        
-	
-		<div class="banner-bottom">
+	<div class="services" id="services">
+	<div class="grid_3 grid_5" style="border: 1px solid black;border-radius: 55px;height:150px">
 		<div class="container">
-			<h2> Search for the services</h2>
-			<a href="#services" class="arrow scroll"> </a>
+		<h3 style="font-size: 2em">Top clinics In Thunderbay</h3>
+				<div style="height:13px"> </div>
+				<form action="search" >				        
+       			  <input type="hidden" name="keyword"  id="Thunder Bay Regional Health Sciences Centre-Fracture Clinic" value="Thunder Bay Regional Health Sciences Centre-Fracture Clinic">
+    			 <button  style="float:left;width:450px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">Thunder Bay Regional Health Sciences Centre-Fracture Clinic(2)</button>
+    			 </form>	
+    			 		
+    			  <form action="search" >
+    			 	  <input type="hidden" name="keyword"  id="Red River Walk-In Medical Clinic" value="Red River Walk-In Medical Clinic">
+    				 <button  style="float:left;width:250px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">Red River Walk-In Medical Clinic(3)</button>
+    			 </form>  
+    			   
+    			   <form action="search" >
+    			 	  <input type="hidden" name="keyword"  id="Port Arthur Health Centre" value="Port Arthur Health Centre">
+    				 <button  style="float:left;width:250px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">Port Arthur Health Centre(3)</button>
+    			 </form>
+    			 
+    			 <form action="search" >
+    			 	  <input type="hidden" name="keyword"  id="Good Doctors Thunder Bay" value="Good Doctors Thunder Bay">
+    				 <button  style="float:left;width:250px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">Good Doctors Thunder Bay(3)</button>
+    			 </form>
+    			     		 
+
+    			 </div>
 		</div>
+		<div class="clearfix"> </div>
 	</div>
+			
+			
+				<div class="banner-bottom">
+		<div class="container">			
+			<a href="#se" onclick="myFunction()" class="arrow scroll"> </a>
+		</div>
+	</div>	
 	
 	<!--services-->
-	<div class="services" id="services">
+	<div class="services" id="se">
 		<div class="container">
-			<h3>Services</h3>
+			<h3>Search By</h3>
 			<div class="row services-info">			
 				<div class="col-sm-6 col-md-4 services-grids">
 					<div class="thumbnail">
 						<div class="moments-bottom">
-							<a href="images/img9.jpg">
+							<a href="doctorsSpecialization.jsp">
 								<img src="images/img9.jpg" class="img-responsive zoom-img " alt="">				
 							</a>
 						</div>
 						<div class="caption services-caption">
 							<h4><a href="doctorsSpecialization.jsp">Doctors</a></h4>
-											
+							<p>Find the best available doctor near your location</p>				
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-4 services-grids">
 					<div class="thumbnail">
 						<div class="moments-bottom">
-							<a href="images/hospital.jpg">
+							<a href="hospitalSpecialization.jsp">
 								<img src="images/hospital.jpg" class="img-responsive zoom-img " alt="">				
 							</a>
 						</div>
 						<div class="caption services-caption">
 							<h4><a href="hospitalSpecialization.jsp">Hospitals</a></h4>
-											
+							<p>Find the best available hospital near your location</p>				
 						</div>
 					</div>
 				</div>
@@ -180,7 +179,7 @@
 						</div>
 						<div class="caption services-caption">
 							<h4><a href="clinicSpecialization.jsp">Clinics</a></h4>
-											
+							<p>Find the best available Clinics near your location</p>				
 						</div>
 					</div>
 				</div>
@@ -188,7 +187,24 @@
 
 				<div class="clearfix"> </div>
 			</div>
-
+			
+		
+	
+			
+			
+			
+			<!--light-box-js -->
+				<script src="js/jquery.chocolat.js"></script>
+				<!--light-box-files -->
+				<script type="text/javascript">
+				$(function() {
+					$('.moments-bottom a').Chocolat();
+				});
+				</script> 
+			<!--//end-gallery js-->
+		</div>
+	</div>	
+	
 	
 <!--map-->
 	<div class="map">
@@ -211,14 +227,11 @@
 	
 	<div class="footer-bottom">
 		<div class="container">
-			<p>Copyright ©  2018 Find My Doctor. All rights reserved </p>
+			<p>Copyright Â© 2018 Find my Doctor. All rights reserved </p>
 		</div>
 	</div>
 	<!--smooth-scrolling-of-move-up-->
 	<script type="text/javascript">
-	
-	
-	
 		$(document).ready(function() {
 			/*
 			var defaults = {
@@ -232,28 +245,6 @@
 			$().UItoTop({ easingType: 'easeOutQuart' });
 			
 		});
-		
-		function myFunctionAvailability() {
-		    var x = document.getElementById("register");
-		    if (x.style.display === "none") {
-		        x.style.display = "block";
-		    } else {
-		        x.style.display = "none";
-		    }
-		}
-		
-		
-		function Validate() {
-	        var password = document.getElementById("password").value;
-	        var confirmPassword = document.getElementById("confirm_password").value;
-	        if (password != confirmPassword) {
-	            alert("Passwords do not match.");
-	            /* return false; */
-	        }
-	       /*  return true; */
-	    }
-		
-		
 	</script>
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 	<!--//smooth-scrolling-of-move-up-->
@@ -261,5 +252,16 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.js"> </script>
+    
+    <script>
+function myFunction() {
+    var x = document.getElementById("services");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
 </body>
 </html>

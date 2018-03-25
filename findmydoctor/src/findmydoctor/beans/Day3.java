@@ -107,9 +107,7 @@ public class Day3 {
 	public void setT38(String T38) {
 		this.T38 = T38;
 	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
+
 	@Override
 	public String toString() {
 		return "Day3 [T31=" + T31 + ", T32=" + T32 + ", T33=" + T33 + ", T34="
