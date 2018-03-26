@@ -66,7 +66,10 @@
 			<div class="top-nav cl-effect-5">
 				<span class="menu-icon"><img src="images/menu-icon.png" alt=""/></span>		
 				<ul class="nav1">
+					<li><a href="index.jsp" class="active"><span data-hover="Home">Home</span></a></li>
+					
 					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
+					
 				</ul>
 				<!-- script-for-menu -->
 				<script>
@@ -81,6 +84,7 @@
 			<!--//top-nav-->
 			<form class="navbar-form navbar-right" action="search">
 				<div class="form-group">
+			
 				<input type="text" placeholder="Search using Keywords .. Dentist,Gynecologist" name="keyword" id="keyword" style="width:400px;border-radius: 5px;">
 					<button type="submit" class="btn btn-default"></button>
 				</div>		
@@ -111,8 +115,8 @@
     			 </form>
     			 
     			 <form action="search" >
-    			 	  <input type="hidden" name="keyword"  id="St. Josephs Hospital" value="St. Josephs Hospital">
-    				 <button  style="float:left;width:250px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">St. Josephs Hospital(3)</button>
+    			 	  <input type="hidden" name="keyword"  id="St. Joseph's Hospital" value="St. Joseph's Hospital">
+    				 <button  style="float:left;width:250px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">St. Joseph's Hospital(3)</button>
     			 </form>
     			     		 
 
