@@ -14,28 +14,46 @@ import org.springframework.web.bind.annotation.RequestParam;
 import findmydoctor.beans.Availability;
 import findmydoctor.beans.Doctor;
 import findmydoctor.beans.Patient;
+import findmydoctor.restapi.client.BetterdoctorClient;
+import findmydoctor.restapi.client.Doctors;
 import findmydoctor.service.FindMyDoctorService;
 
-/**
- * @author nulak
- *
- */
+
 @Controller
 public class FindMyDoctorController {
 	@Autowired
 	FindMyDoctorService findMyDoctorService;
+	
+	
+	
+	@RequestMapping(value="searchD")
+	public String getsearch(Model model,@RequestParam("keyword") String type) {		
+		BetterdoctorClient bt =new BetterdoctorClient();
+		
+		Doctors doctor = bt.GetdoctorClient();
+		if(doctor != null ) {
+			model.addAttribute("list",doctor);
+		} else {
+			model.addAttribute("error","Sorry unable to find doctors !!");
+		}
+		return "index";
+	}
+	
+	
+	
 	@RequestMapping(value="search")
 	public String search(Model model,@RequestParam("keyword") String type) {		
 		
 		List<Doctor> doctor = findMyDoctorService.getSearchDetails(type);
 		if(doctor != null ) {
 			model.addAttribute("list",doctor);
-			
 		} else {
 			model.addAttribute("error","Sorry unable to find doctors !!");
 		}
 		return "showDoctors";
 	}
+	
+	
 	@RequestMapping(value="availability")
 public String SearchAvailability(Model model,@RequestParam("availability") String type) {		
 		
@@ -86,7 +104,7 @@ public String Login(Model model,@RequestParam("email") String email,@RequestPara
 			
 			List<Patient> patient = findMyDoctorService.setPatientDetails(email,password,Name,Age,Sex,Phone);
 			if(patient != null ) {
-				model.addAttribute("message","registration Successful !!");
+				model.addAttribute("message","Login Successful !!");
 			}
 					else {
 						model.addAttribute("error","no details entered");
