@@ -70,7 +70,7 @@
 					
 					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
 					
-				</ul>
+			</ul>
 				<!-- script-for-menu -->
 				<script>
 				   $( "span.menu-icon" ).click(function() {
