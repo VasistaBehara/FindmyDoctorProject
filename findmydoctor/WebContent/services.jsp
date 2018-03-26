@@ -74,8 +74,6 @@
 	</div>
 	<!--//header-bottom-->
 	
-	
-	
 	<!--services-->
 	<div class="services">
 		<div class="container" >
@@ -125,8 +123,6 @@
 				<div class="clearfix"> </div>
 			</div>
 			
-			
-			
 			<!--light-box-js -->
 				<script src="js/jquery.chocolat.js"></script>
 				<!--light-box-files -->
@@ -139,9 +135,6 @@
 		</div>
 			<div class="clearfix"> </div>
 	</div>
-	
-	
-	
 	
 	
 	<div style="height:30px"></div>	
@@ -160,10 +153,6 @@
 		</div>
 	</div>
 	<!--//map-->
-	
-
-	
-	
 	<div class="footer-bottom">
 		<div class="container">
 			<p>Copyright © 2018 Find My Doctor. All rights reserved </p>
