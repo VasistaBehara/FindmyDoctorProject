@@ -16,7 +16,10 @@ import findmydoctor.beans.Doctor;
 import findmydoctor.beans.Patient;
 import findmydoctor.service.FindMyDoctorService;
 
-
+/**
+ * @author nulak
+ *
+ */
 @Controller
 public class FindMyDoctorController {
 	@Autowired
@@ -27,6 +30,7 @@ public class FindMyDoctorController {
 		List<Doctor> doctor = findMyDoctorService.getSearchDetails(type);
 		if(doctor != null ) {
 			model.addAttribute("list",doctor);
+			
 		} else {
 			model.addAttribute("error","Sorry unable to find doctors !!");
 		}
@@ -82,7 +86,7 @@ public String Login(Model model,@RequestParam("email") String email,@RequestPara
 			
 			List<Patient> patient = findMyDoctorService.setPatientDetails(email,password,Name,Age,Sex,Phone);
 			if(patient != null ) {
-				model.addAttribute("message","Login Successful !!");
+				model.addAttribute("message","registration Successful !!");
 			}
 					else {
 						model.addAttribute("error","no details entered");

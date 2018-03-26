@@ -50,11 +50,7 @@
 			<div class="top-nav cl-effect-5">
 				<span class="menu-icon"><img src="images/menu-icon.png" alt=""/></span>		
 				<ul class="nav1">
-					<li><a href="index.jsp" class="active"><span data-hover="Home">Home</span></a></li>
-					<!-- <li><a href="about.jsp"> <span data-hover="About">About</span></a></li> -->
 					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
-					<!-- <li><a href="news.jsp"> <span data-hover="News">News</span></a></li> -->
-					<!-- <li><a href="contact.jsp"> <span data-hover="Contact">Contact</span></a></li> -->
 				</ul>
 				<!-- script-for-menu -->
 				<script>
@@ -69,13 +65,6 @@
 			<!--//top-nav-->
 			<form class="navbar-form navbar-right" action="search">
 				<div class="form-group">
-				<!-- <select style="width:150px;height:27px;border-radius: 5px;">
-							<option value="volvo">Choose Location</option>
-						  <option value="volvo">Arthur Street</option>
-						  <option value="saab">Edward Street</option>
-						  <option value="opel">Cumberland</option>
-						  <option value="audi">Dawson</option>
-				</select> -->
 				<input type="text" placeholder="Search using Keywords .. Dentist,Gynecologist,Pediatrician" name="keyword" id="keyword" style="width:400px;border-radius: 5px;">
 					<button type="submit" class="btn btn-default"></button>
 				</div>		

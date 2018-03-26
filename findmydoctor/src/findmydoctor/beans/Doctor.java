@@ -3,7 +3,10 @@
  */
 package findmydoctor.beans;
 
-
+/**
+ * @author
+ *
+ */
 public class Doctor {
 	private int docId;
 	private String name;

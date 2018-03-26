@@ -4,7 +4,10 @@ public class Patient {
 
 	private String email;
 	private String password;
-
+	
+	
+	
+	
 	public String getPassword() {
 		return password;
 	}
@@ -17,6 +20,7 @@ public class Patient {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
 	
 
 

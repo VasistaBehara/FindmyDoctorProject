@@ -59,11 +59,7 @@ request.getSession().setAttribute("data", data);
 			<div class="top-nav cl-effect-5">
 				<span class="menu-icon"><img src="images/menu-icon.png" alt=""/></span>		
 				<ul class="nav1">
-					<li><a href="index.jsp"><span data-hover="Home">Home</span></a></li>
-					<!-- <li><a href="about.jsp"> <span data-hover="About">About</span></a></li> -->
 					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
-					<!-- <li><a href="news.jsp" class="active"> <span data-hover="News">News</span></a></li> -->
-					<!-- <li><a href="contact.jsp"> <span data-hover="Contact">Contact</span></a></li> -->
 				</ul>
 				<!-- script-for-menu -->
 				<script>
@@ -79,13 +75,6 @@ request.getSession().setAttribute("data", data);
 			<!--//top-nav-->
 			<form class="navbar-form navbar-right" action="search">
 				<div class="form-group">
-				<!-- <select style="width:150px;height:27px;border-radius: 5px;">
-							<option value="volvo">Choose Location</option>
-						  <option value="volvo">Arthur Street</option>
-						  <option value="saab">Edward Street</option>
-						  <option value="opel">Cumberland</option>
-						  <option value="audi">Dawson</option>
-				</select> -->
 				<input type="text" placeholder="Search using Keywords .. Dentist,Gynecologist," name="keyword" id="keyword" style="width:400px;border-radius: 5px;">
 					<button type="submit" class="btn btn-default"></button>
 				</div>		
@@ -178,8 +167,10 @@ request.getSession().setAttribute("data", data);
 							</thead>
 							<tbody>
 							<tr>
-								<td>10AM-11AM</td>
-								<td><a href="#Availability" onclick="location.href='login.jsp'" class="arrow scroll">${data.day2.t21} </a> <td>
+						
+								<td id="t1"  value="10AM-11AM">10AM-11AM</td>
+								<input type=hidden  id="time1" value="10AM-11AM" >
+								<td ><a href="#Availability" onclick="alpha('time1')" class="arrow scroll">${data.day2.t21} </a> <td>
 							</tr>
 							<tr>
 								<td>11AM-12pM</td>
@@ -380,6 +371,12 @@ request.getSession().setAttribute("data", data);
 		    } else {
 		        x.style.display = "none";
 		    }
+		}
+		var time='';
+		function alpha(data){	
+			 time = document.getElementById(data).value;
+			 
+		
 		}
 	</script>
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>

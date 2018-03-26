@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author 
+ * @author nulak
  *
  */
 package findmydoctor.beans;
