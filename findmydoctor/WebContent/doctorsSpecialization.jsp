@@ -66,11 +66,8 @@
 			<div class="top-nav cl-effect-5">
 				<span class="menu-icon"><img src="images/menu-icon.png" alt=""/></span>		
 				<ul class="nav1">
-					<li><a href="index.jsp" class="active"><span data-hover="Home">Home</span></a></li>
-					
 					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
-					
-			</ul>
+				</ul>
 				<!-- script-for-menu -->
 				<script>
 				   $( "span.menu-icon" ).click(function() {

@@ -207,7 +207,7 @@
 	
 	<div class="footer-bottom">
 		<div class="container">
-			<p>Copyright Â©  2018 Find My Doctor. All rights reserved </p>
+			<p>Copyright ©  2018 Find My Doctor. All rights reserved </p>
 		</div>
 	</div>
 	<!--smooth-scrolling-of-move-up-->
@@ -233,10 +233,11 @@
 		    var x = document.getElementById("register");
 		    if (x.style.display === "none") {
 		        x.style.display = "block";
-		    } else{
+		    } else {
 		        x.style.display = "none";
 		    }
 		}
+		
 		
 		function Validate() {
 	        var password = document.getElementById("password").value;
