@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Find My Doctor | News</title>
+<title>Find My Doctor | Appointment</title>
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
 <!-- Custom Theme files -->
@@ -18,6 +18,11 @@
 <!-- js -->
 <script src="js/jquery-1.11.1.min.js"></script> 
 <!-- //js -->	
+<!-- JS file -->
+<script src="js/jquery.easy-autocomplete.min.js"></script> 
+
+<!-- CSS file -->
+<link rel="stylesheet" href="css/easy-autocomplete.min.css">
 <!-- start-smoth-scrolling-->
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>	
@@ -57,7 +62,7 @@
 			<div class="top-nav cl-effect-5">
 				<span class="menu-icon"><img src="images/menu-icon.png" alt=""/></span>		
 				<ul class="nav1">
-					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
+					<li><a href="services.jsp"> <span data-hover="SearchBy">Home</span></a></li>
 				</ul>
 				<!-- script-for-menu -->
 				<script>
@@ -73,7 +78,7 @@
 			<!--//top-nav-->
 			<form class="navbar-form navbar-right" action="search">
 				<div class="form-group">
-				<input type="text" placeholder="Search using Keywords .. Dentist,Gynecologist," name="keyword" id="keyword" style="width:400px;border-radius: 5px;">
+				<input type="text" placeholder="Search using Keywords .. Dentist,Gynecologist," name="keyword" id="countries" style="width:400px;border-radius: 5px;">
 					<button type="submit" class="btn btn-default"></button>
 				</div>		
 			</form>
@@ -106,8 +111,8 @@
 							</a>
 						</div>
 						<div class="caption services-caption">
-							<h4><a href="doctorsSpecialization.jsp">Doctors</a></h4>
-											
+							<h4><a href="doctorsSpecialization.jsp">Specialities</a></h4>
+							<p>Find the best available doctor near your location</p>				
 						</div>
 					</div>
 				</div>
@@ -120,6 +125,7 @@
 						</div>
 						<div class="caption services-caption">
 							<h4><a href="hospitalSpecialization.jsp">Hospitals</a></h4>
+							<p>Find the best available hospital near your location</p>
 											
 						</div>
 					</div>
@@ -133,7 +139,7 @@
 						</div>
 						<div class="caption services-caption">
 							<h4><a href="clinicSpecialization.jsp">Clinics</a></h4>
-											
+							<p>Find the best available Clinics near your location</p>				
 						</div>
 					</div>
 				</div>
@@ -193,6 +199,21 @@
 		        x.style.display = "none";
 		    }
 		}
+		 var options = {
+					
+					url: "json/countries.json",
+
+					  getValue: "name",
+
+					  list: {	
+					    match: {
+					      enabled: true
+					    }
+					  },
+
+					  theme: "square"
+					};
+							$("#countries").easyAutocomplete(options);
 	</script>
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 	<!--//smooth-scrolling-of-move-up-->

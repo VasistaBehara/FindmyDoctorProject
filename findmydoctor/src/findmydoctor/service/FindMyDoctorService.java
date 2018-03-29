@@ -13,10 +13,6 @@ import findmydoctor.beans.Doctor;
 import findmydoctor.beans.Patient;
 import findmydoctor.dao.IFindMyDoctorDao;
 
-/**
- * @author nulak
- *
- */
 @Component("findMyDoctorService")
 public class FindMyDoctorService {
 	@Autowired
@@ -37,8 +33,8 @@ public class FindMyDoctorService {
 		return findMyDoctorDao.getPatientDetails(type);
 	}
 	
-	public List<Patient> setPatientDetails(String email, String password, String name, String age, String sex, String phone) {
+	public List<Patient> setPatientDetails(String email, String name, String age, String sex, String phone, String day, String doctorname, String time) {
 		
-		return findMyDoctorDao.setPatientDetails(email,password,name,age,sex,phone);
+		return findMyDoctorDao.setPatientDetails(email,name,age,sex,phone, day, doctorname, time);
 	}
 }

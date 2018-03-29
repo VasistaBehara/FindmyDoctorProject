@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Find My Doctor | Doctors Specialization</title>
+<title>Find My Doctor | clinic Specialization</title>
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
 <link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen">				
@@ -17,6 +17,11 @@
 <!-- js -->
 <script src="js/jquery-1.11.1.min.js"></script> 
 <!-- //js -->	
+<!-- JS file -->
+<script src="js/jquery.easy-autocomplete.min.js"></script> 
+
+<!-- CSS file -->
+<link rel="stylesheet" href="css/easy-autocomplete.min.css">
 <!-- start-smoth-scrolling-->
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>	
@@ -66,7 +71,7 @@
 			<div class="top-nav cl-effect-5">
 				<span class="menu-icon"><img src="images/menu-icon.png" alt=""/></span>		
 				<ul class="nav1">
-					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
+					<li><a href="services.jsp"> <span data-hover="SearchBy">Home</span></a></li>
 				</ul>
 				<!-- script-for-menu -->
 				<script>
@@ -81,7 +86,7 @@
 			<!--//top-nav-->
 			<form class="navbar-form navbar-right" action="search">
 				<div class="form-group">
-				<input type="text" placeholder="Search using Keywords .. Dentist,Gynecologist" name="keyword" id="keyword" style="width:400px;border-radius: 5px;">
+				<input type="text" placeholder="Search using Keywords .. Dentist,Gynecologist" name="keyword" id="countries" style="width:400px;border-radius: 5px;">
 					<button type="submit" class="btn btn-default"></button>
 				</div>		
 			</form>
@@ -93,29 +98,22 @@
 	<div class="services" id="services">
 	<div class="grid_3 grid_5" style="border: 1px solid black;border-radius: 55px;height:150px">
 		<div class="container">
-		<h3 style="font-size: 2em">Top clinics In Thunderbay</h3>
-				<div style="height:13px"> </div>
+		<h3 style="font-size: 2em">Top clinics</h3>
+				<div style="height:18px"> </div>
 				<form action="search" >				        
-       			  <input type="hidden" name="keyword"  id="Thunder Bay Regional Health Sciences Centre-Fracture Clinic" value="Thunder Bay Regional Health Sciences Centre-Fracture Clinic">
-    			 <button  style="float:left;width:450px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">Thunder Bay Regional Health Sciences Centre-Fracture Clinic(2)</button>
+       			  <input type="hidden" name="keyword"  id="USA Medical Center" value="USA Medical Center">
+    			 <button  style="float:left;width:250px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">USA Medical Center(2)</button>
     			 </form>	
     			 		
     			  <form action="search" >
-    			 	  <input type="hidden" name="keyword"  id="Red River Walk-In Medical Clinic" value="Red River Walk-In Medical Clinic">
-    				 <button  style="float:left;width:250px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">Red River Walk-In Medical Clinic(3)</button>
+    			 	  <input type="hidden" name="keyword"  id="Heart of Florida Regional Medical Center" value="Heart of Florida Regional Medical Center">
+    				 <button  style="float:left;width:350px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">Heart of Florida Regional Medical Center(3)</button>
     			 </form>  
     			   
     			   <form action="search" >
-    			 	  <input type="hidden" name="keyword"  id="Port Arthur Health Centre" value="Port Arthur Health Centre">
-    				 <button  style="float:left;width:250px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">Port Arthur Health Centre(3)</button>
+    			 	  <input type="hidden" name="keyword"  id="HCA Physician Services" value="HCA Physician Services">
+    				 <button  style="float:left;width:250px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">HCA Physician Services(3)</button>
     			 </form>
-    			 
-    			 <form action="search" >
-    			 	  <input type="hidden" name="keyword"  id="Good Doctors Thunder Bay" value="Good Doctors Thunder Bay">
-    				 <button  style="float:left;width:250px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">Good Doctors Thunder Bay(3)</button>
-    			 </form>
-    			     		 
-
     			 </div>
 		</div>
 		<div class="clearfix"> </div>
@@ -141,8 +139,8 @@
 							</a>
 						</div>
 						<div class="caption services-caption">
-							<h4><a href="doctorsSpecialization.jsp">Doctors</a></h4>
-							<p>Find the best available doctor near your location</p>				
+							<h4><a href="doctorsSpecialization.jsp">Specialities</a></h4>
+							<p>Find the best available doctor based on specialities</p>				
 						</div>
 					</div>
 				</div>
@@ -251,6 +249,21 @@ function myFunction() {
         x.style.display = "none";
     }
 }
+var options = {
+		
+		url: "json/countries.json",
+
+		  getValue: "name",
+
+		  list: {	
+		    match: {
+		      enabled: true
+		    }
+		  },
+
+		  theme: "square"
+		};
+				$("#countries").easyAutocomplete(options);
 </script>
 </body>
 </html>

@@ -28,11 +28,11 @@ public class FindMyDoctorDao implements IFindMyDoctorDao {
 	@Override
 	public List<Doctor> getDoctorDetails(String type) {
 		List<Doctor> list = null;
-		String sql ="select docId,Name,Age,Department,Location,rating,Pricing,HName,CName from doctor d where Department like '%" + type + "%'";
-		String sql2 ="select docId,Name,Age,Department,Location,rating,Pricing,HName,CName from doctor d where Name like '%" + type + "%'";
-		String sql3 ="select docId,Name,Age,Department,Location,rating,Pricing,HName,CName from doctor d where Location like '%" + type + "%'";
-		String sql4 ="select docId,Name,Age,Department,Location,rating,Pricing,HName,CName from doctor d where HName like '%" + type + "%'";
-		String sql5 ="select docId,Name,Age,Department,Location,rating,Pricing,HName,CName from doctor d where CName like '%" + type + "%'";
+		String sql ="select docId,Name,Age,Department,Location,rating,Pricing,HName,CName,Docpic from doctor d where Department like '%" + type + "%'";
+		String sql2 ="select docId,Name,Age,Department,Location,rating,Pricing,HName,CName,Docpic from doctor d where Name like '%" + type + "%'";
+		String sql3 ="select docId,Name,Age,Department,Location,rating,Pricing,HName,CName,Docpic from doctor d where Location like '%" + type + "%'";
+		String sql4 ="select docId,Name,Age,Department,Location,rating,Pricing,HName,CName,Docpic from doctor d where HName like '%" + type + "%'";
+		String sql5 ="select docId,Name,Age,Department,Location,rating,Pricing,HName,CName,Docpic from doctor d where CName like '%" + type + "%'";
 		//Object[] params = new Object[] {type};
 		try {
 			list = jdbcTemplate.query(sql,new DoctorMapper());
@@ -65,7 +65,7 @@ public class FindMyDoctorDao implements IFindMyDoctorDao {
 	}
 	public List<Availability> getAvailabilityDetails(String type1) {
 		List<Availability> list1 = null;
-		String sql ="select d.Name,T1,T2,T3,T4,T5,T6,T7,T8,T21,T22,T23,T24,T25,T26,T27,T28,T31,T32,T33,T34,T35,T36,T37,T38,d.Pricing from doctor d , day2 d2, day1 d1, day3 d3 where d.docId = d2.DocId and d1.DocId=d.docId and d.docId = d3.DocId and d.docId = ?;";
+		String sql ="select d.Name,d.Docpic,T1,T2,T3,T4,T5,T6,T7,T8,T21,T22,T23,T24,T25,T26,T27,T28,T31,T32,T33,T34,T35,T36,T37,T38,d.Pricing from doctor d , day2 d2, day1 d1, day3 d3 where d.docId = d2.DocId and d1.DocId=d.docId and d.docId = d3.DocId and d.docId = ?;";
 		Object[] params1 = new Object[] {type1};
 		try {
 			list1 = jdbcTemplate.query(sql,new AvailabilityMapper(),params1 );
@@ -95,10 +95,10 @@ public class FindMyDoctorDao implements IFindMyDoctorDao {
 		return list2;
 	}
 	@Override
-	public List<Patient> setPatientDetails(String email,String password,String name,String age,String sex,String phone) {
+	public List<Patient> setPatientDetails(String email,String name,String age,String sex,String phone, String day,String doctorname,String time) {
 		List<Patient> list2 = null;		
 		try {
-			jdbcTemplate.update("INSERT INTO patients (Name, Age, Email, Phone, Sex, Password) VALUES (?, ?, ?, ?, ?, ?)",name,age,email,phone,sex,password);
+			jdbcTemplate.update("INSERT INTO patients (Name, Age, Email, Phone, Sex, day, time, docname) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",name,age,email,phone,sex,day,doctorname,time);
 		} catch (DataAccessException e) {
 			
 			e.printStackTrace();

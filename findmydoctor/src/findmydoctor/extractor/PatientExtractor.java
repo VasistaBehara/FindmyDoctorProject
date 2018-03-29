@@ -16,6 +16,7 @@ public class PatientExtractor implements ResultSetExtractor<Patient> {
 		try {
 			patient.setEmail(resultSet.getString("email"));
 			patient.setPassword(resultSet.getString("password"));
+			patient.setName(resultSet.getString("name"));
 
 		} catch (Exception e) {
 			patient= null;

@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Find My Doctor | Hospital Specialization</title>
+<title>Find My Doctor | all doctors</title>
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
 <link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen">				
@@ -71,7 +74,7 @@
 			<div class="top-nav cl-effect-5">
 				<span class="menu-icon"><img src="images/menu-icon.png" alt=""/></span>		
 				<ul class="nav1">
-					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
+					<li><a href="services.jsp"> <span data-hover="SearchBy">Home</span></a></li>
 				</ul>
 				<!-- script-for-menu -->
 				<script>
@@ -96,46 +99,105 @@
 	<!--//header-bottom-->
 	
 	<div class="services" id="services">
-	<div class="grid_3 grid_5" style="border: 1px solid black;border-radius: 55px;height:150px">
+	<div class="grid_3 grid_5" style="border: 0px solid black;height:3000px">
 		<div class="container">
-		<h3 style="font-size: 2em">Top Hospitals In Thunderbay</h3>
-				<div style="height:13px"> </div>
-				<form action="search" >				        
-       			  <input type="hidden" name="keyword"  id="The Johns Hopkins Hospital" value="The Johns Hopkins Hospital">
-    			 <button  style="float:left;width:250px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">The Johns Hopkins Hospital(10)</button>
-    			 </form>	
-    			 		
-    			  <form action="search" >
-    			 	  <input type="hidden" name="keyword"  id="Porter Regional Hospital" value="Porter Regional Hospital">
-    				 <button  style="float:left;width:250px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">Porter Regional Hospital(6)</button>
-    			 </form>  
-    			   
-    			   <form action="search" >
-    			 	  <input type="hidden" name="keyword"  id="Forrest General Hospital" value="Forrest General Hospital">
-    				 <button  style="float:left;width:250px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">Forrest General Hospital(3)</button>
-    			 </form>
-    			 
-    			 <form action="search" >
-    			 	  <input type="hidden" name="keyword"  id="St. Josephs Hospital" value="St. Josephs Hospital">
-    				 <button  style="float:left;width:250px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">St. Josephs Hospital(3)</button>
-    			 </form>
-    			 
-    			 <form action="search" >
-    			 	  <input type="hidden" name="keyword"  id="Big Spring State Hospital" value="Big Spring State Hospital">
-    				 <button  style="float:left;width:250px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">Big Spring State Hospital(3)</button>
-    			 </form> 		 
+			<div class="news">
+		<div class="container">
+		<c:forEach items="${list}" var="data">	
+			
+			</c:forEach>	
+		
+				
+	
+			<div class="page-header">				
+			</div>
+			<h3>List of all Doctors</h3>	
+			
+			
+				
+			<div class="container">
+			<div class="bs-docs-example">
+			
+				<table class="table table-hover">
+				 <thead>
+								<tr>
+								
+									
+									
+									<th >
+										Name
+									</th>
+									<th >
+									Location
+										
+									</th>
+									<th>
+									Department	
+									</th>
+									<th >
+										Age
+									</th>
+									<th >
+										Gender
+									</th>
+									<th >
+										
+									</th>
+									
+									
+									
+								</tr>
 
+							</thead>
+				 	<tbody>
+		<c:forEach items="${list}" var="data">
+    <tr>
+		   	 <td>${data.profile.first_name}</td>
+		
+		     <td>
+		     <c:forEach items="${data.practices}" var="dat">
+		     	${dat.location_slug}
+		     	</c:forEach>
+			</td>
+    			 
+    			  <td>
+		     <c:forEach items="${data.lSpecialties}" var="dat">
+		     	${dat.uid}
+		     	</c:forEach>
+			</td>
+    			 <td>    			 
+    			 <img src="${data.profile.image}" alt="Smiley face" width="65" height="65">
+    			 </td>
+    			  <td>    			 
+    			 ${data.profile.gender}
+    			 </td>
+    		
+    			 
+		    
+	    	
+     
+		</tr>
+		
+		<div   class="container" style="display:none;border: 1px solid black;border-radius: 55px;height:150px" id="Availability">
+		
+		
+		
+		</div>
+		</c:forEach>
+		<c:if test="${error ne null }"><tr><td colspan="6" align="center">${error}</td></tr></c:if>									
+		</tbody>
+				</table>
+			</div>
+		  </div>	
+		</div>
+	</div>
     			 </div>
 		</div>
 		<div class="clearfix"> </div>
 	</div>
 			
 			
-				<div class="banner-bottom">
-		<div class="container">			
-			<a href="#se" onclick="myFunction()" class="arrow scroll"> </a>
-		</div>
-	</div>	
+	
 	
 	<!--services-->
 	<div class="services" id="se">
@@ -151,7 +213,7 @@
 						</div>
 						<div class="caption services-caption">
 							<h4><a href="doctorsSpecialization.jsp">Specialities</a></h4>
-							<p>Find the best available doctor based on specialities</p>				
+							<p>Find the best available doctor near your location</p>				
 						</div>
 					</div>
 				</div>

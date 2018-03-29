@@ -29,6 +29,7 @@ public class DoctorExtractor implements ResultSetExtractor<Doctor> {
 			doctor.setRating(resultSet.getString("rating"));
 			doctor.setHname(resultSet.getString("HName"));
 			doctor.setCname(resultSet.getString("CName"));
+			doctor.setDocpic(resultSet.getString("Docpic"));
 		} catch (Exception e) {
 			doctor= null;
 			e.printStackTrace();

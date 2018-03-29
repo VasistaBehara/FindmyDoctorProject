@@ -6,6 +6,11 @@ package findmydoctor.restapi.client;
 
 public class Specialties {
 
+	@Override
+	public String toString() {
+		return "Specialties [uid=" + uid + ", name=" + name + ", description=" + description + ", category=" + category
+				+ ", actor=" + actor + ", actors=" + actors + "]";
+	}
 	private String  uid;
 	private String name;
 	private String description;

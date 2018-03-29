@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Find My Doctor | News</title>
+<title>Find My Doctor | mail</title>
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
 <!-- Custom Theme files -->
@@ -57,7 +57,7 @@
 			<div class="top-nav cl-effect-5">
 				<span class="menu-icon"><img src="images/menu-icon.png" alt=""/></span>		
 				<ul class="nav1">
-					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
+					<li><a href="services.jsp"> <span data-hover="SearchBy">Home</span></a></li>
 				</ul>
 				<!-- script-for-menu -->
 				<script>
@@ -71,15 +71,11 @@
 			</div>
 			
 			<!--//top-nav-->
-			<form class="navbar-form navbar-right" action="login">
-				<input type="text" name="email" class="form-control input-sm chat-input" placeholder="Enter your email" required />
-            <input type="password" name="userPassword" class="form-control input-sm chat-input" placeholder="password" required />
-            
-            <span class="group-btn">     
-                <input type="submit" style=" background-color: #448885;" class="btn btn-primary btn-md" value="Login"><i class="fa fa-sign-in"></i></a>                
-           
-            <input type="button" style=" background-color: #448885" class="btn btn-primary btn-md" onclick="myFunctionAvailability()" value="Signup" ><i class="fa fa-sign-in" ></i></a>
-            	 </span>	
+			<form class="navbar-form navbar-right" action="search">
+				<div class="form-group">
+				<input type="text" placeholder="Search Keywords .. Dentist,Gynecologist" name="keyword" id="countries" style="width:400px;border-radius: 5px;">
+					<button type="submit" class="btn btn-default"></button>
+				</div>		
 			</form>
 			<div class="clearfix"> </div>
 		</div>
@@ -94,25 +90,48 @@
 </c:forEach>
 <c:if test="${error ne null }"><tr><td colspan="6" align="center">${error}</td></tr></c:if>
 
-<div   class="container" style="border-radius: 55px;width:450px;height:450px" id="register">
-	<div style="height:20px"></div>	
-	
-		<center>
-				<h2>Sign Up</h2>
-			</center>
-			<div  id="Reg" class="form-login">
-			<form align="center" action="register" onsubmit="Validate()" >
+<div   class="container" style="border-radius: 55px;width:900px;height:450px" id="register">
+	<div style="height:50px"></div>	
+	<div   class="form-login" style="float:left;border-radius:55px;width:450px;height:50px">
+				<h3>Appointment Details</h3>	
 				
+				<%
+				String time=request.getParameter("time");
+				String doctorname=request.getParameter("doctorname");
+				String day=request.getParameter("day");	
+				String pic=request.getParameter("pic");
+				%>
+				
+				<div style="height:40px;width:450px">					
+				<p><img src="<%=pic %>" alt="Smiley face" width="65" height="65"><br>
+				<%=day %>@<%=time %><br>				
+				Appointment with <%=doctorname %></p>
+				</div>	
+				
+				<div style="height:20px;width:450px">
+				
+				</div>
+			
+				
+	</div>
+
+			<div  id="Reg" class="form-login" style="float:right">
+					<center>
+			
+			</center>
+			<form align="center" action="mail" onsubmit="Validate()" >
+					<h3>Confirm Appointment</h3>
 				 <input type="text" class="form-control input-sm chat-input" name="Name" pattern="[A-Za-z].{3,}" title="atleast 3 letters" placeholder="Enter your Full Name" required /><br> 
 				 <input type="text" class="form-control input-sm chat-input" name="Age" pattern="[0-9][0-9]" title="enter correct age" placeholder="Enter your Age" required /><br>
-					Gender: <input
+					Sex: <input
 					type="radio" name="Sex" value="m" checked> Male
 					 <input type="radio" name="Sex" value="f"> Female <br>
 				<input type="text" class="form-control input-sm chat-input" name="Email" title="something@website.com" placeholder="Enter your Email" required /><br>
-				<input type="text" class="form-control input-sm chat-input" name="Phone" pattern="[0-9][0-9]{9}" title="enter 10 digit phone number" placeholder="Enter your phone number" required /><br>
-					<input type="password"  class="form-control input-sm chat-input"name="password" id="passsword" pattern=".{5,}" title="atleast 5 characters"	placeholder="Enter Password" required /><br>
-					<input	type="password" class="form-control input-sm chat-input" name="rpassword" id="confirm_password" pattern=".{5,}" title="atleast 5 characters" placeholder="Re Enter Password" required /><br>
-					<input type="submit"  style=" background-color: #448885" class="btn btn-primary btn-md" name="register" value="Register"  />
+				<input type="text" class="form-control input-sm chat-input" name="Phone" title="enter 10 digit phone number" placeholder="Enter your phone number" required /><br>
+					<input type="hidden" name="time" value="<%=time %>"/>
+					<input type="hidden" name="doctorname" value="<%=doctorname %>"/>
+					<input type="hidden" name="day" value="<%=day %>" />
+					<input type="submit"  style=" background-color: #448885" class="btn btn-primary btn-md" name="register" value="Confirm Appointment"  />
 					 <input class="btn btn-primary btn-md" type="reset" style=" background-color: #448885" value="Reset" />
 			</form>
 			</div>
@@ -149,7 +168,8 @@
 							</a>
 						</div>
 						<div class="caption services-caption">
-							<h4><a href="doctorsSpecialization.jsp">Doctors</a></h4>
+							<h4><a href="doctorsSpecialization.jsp">Specialities</a></h4>
+							<p>Find the best available doctor based on specialities</p>
 											
 						</div>
 					</div>
@@ -163,7 +183,7 @@
 						</div>
 						<div class="caption services-caption">
 							<h4><a href="hospitalSpecialization.jsp">Hospitals</a></h4>
-											
+							<p>Find the best available hospital near your location</p>				
 						</div>
 					</div>
 				</div>
@@ -176,7 +196,7 @@
 						</div>
 						<div class="caption services-caption">
 							<h4><a href="clinicSpecialization.jsp">Clinics</a></h4>
-											
+							<p>Find the best available Clinics near your location</p>				
 						</div>
 					</div>
 				</div>
@@ -216,14 +236,6 @@
 	
 	
 		$(document).ready(function() {
-			/*
-			var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-			};
-			*/
 			
 			$().UItoTop({ easingType: 'easeOutQuart' });
 			
@@ -239,16 +251,22 @@
 		}
 		
 		
-		function Validate() {
-	        var password = document.getElementById("password").value;
-	        var confirmPassword = document.getElementById("confirm_password").value;
-	        if (password != confirmPassword) {
-	            alert("Passwords do not match.");
-	            /* return false; */
-	        }
-	       /*  return true; */
-	    }
 		
+		var options = {
+				
+				url: "json/countries.json",
+
+				  getValue: "name",
+
+				  list: {	
+				    match: {
+				      enabled: true
+				    }
+				  },
+
+				  theme: "square"
+				};
+						$("#countries").easyAutocomplete(options);
 		
 	</script>
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>

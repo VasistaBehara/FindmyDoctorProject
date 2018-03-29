@@ -7,18 +7,28 @@ import java.io.IOException;
 import org.apache.commons.httpclient.*;
 import org.apache.commons.httpclient.methods.*;
 import org.apache.commons.httpclient.params.HttpMethodParams;
+
+import findmydoctor.beans.Doctor;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 
 public class BetterdoctorClient {
-	public static void main(String[] args) {
+	
+	
+	@SuppressWarnings("unchecked")
+	public  List<Doctors> GetdoctorClient() {
+		
+		List<Doctors> doc=null;
+	
 	try {
 		String url="https://api.betterdoctor.com/2016-03-01/doctors?"
-				+ "location=37.773,-122.413,100&skip=2&limit=1&user_key=faa065b29aaa3868e69e5c7d01248908";
+				+ "location=37.773,-122.413,100&skip=2&limit=30&user_key=faa065b29aaa3868e69e5c7d01248908";
 		URL url1 = new URL(url);
 		HttpURLConnection conn = (HttpURLConnection) url1.openConnection();
 		conn.setRequestMethod("GET");
@@ -42,8 +52,8 @@ public class BetterdoctorClient {
 
 		conn.disconnect();
 		JsonParser jsonParser = new JsonParser();
-		Doctor doc =jsonParser.convertToObject(data);
-		System.out.println(doc.getProfile().getBio());
+		doc = jsonParser.convertToObject(data);
+		System.out.println( doc);
 		
 
 	  } catch (MalformedURLException e1) {
@@ -55,6 +65,6 @@ public class BetterdoctorClient {
 		e.printStackTrace();
 
 	  }
-
+return doc;
 }
 }

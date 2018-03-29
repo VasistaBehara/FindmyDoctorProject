@@ -17,6 +17,7 @@ public class Doctor {
 	private Availability availability;
 	private String Hname;
 	private String Cname;
+	private String docpic;
 	
 	/**
 	 * @return the name
@@ -104,7 +105,7 @@ public class Doctor {
 	@Override
 	public String toString() {
 		return "Doctor [name=" + name + ", age=" + age + ", department=" + department + ", location=" + location
-				+ ", rating=" + rating + ", availability=" + availability + ", docId=" + docId + " , Hname=" + Hname + ", Cname=" + Cname +" ]";
+				+ ", rating=" + rating + ", availability=" + availability + ", docId=" + docId + " , Hname=" + Hname + ", Cname=" + Cname +", docpic=" + docpic +" ]";
 	}
 	public String getHname() {
 		return Hname;
@@ -117,6 +118,12 @@ public class Doctor {
 	}
 	public void setCname(String cname) {
 		Cname = cname;
+	}
+	public String getDocpic() {
+		return docpic;
+	}
+	public void setDocpic(String docpic) {
+		this.docpic = docpic;
 	}
 	
 

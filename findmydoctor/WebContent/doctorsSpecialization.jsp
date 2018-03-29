@@ -16,7 +16,12 @@
 <!-- //Custom Theme files -->
 <!-- js -->
 <script src="js/jquery-1.11.1.min.js"></script> 
-<!-- //js -->	
+<!-- //js -->
+<!-- JS file -->
+<script src="js/jquery.easy-autocomplete.min.js"></script> 
+
+<!-- CSS file -->
+<link rel="stylesheet" href="css/easy-autocomplete.min.css">	
 <!-- start-smoth-scrolling-->
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>	
@@ -66,7 +71,7 @@
 			<div class="top-nav cl-effect-5">
 				<span class="menu-icon"><img src="images/menu-icon.png" alt=""/></span>		
 				<ul class="nav1">
-					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
+					<li><a href="services.jsp"> <span data-hover="SearchBy">Home</span></a></li>
 				</ul>
 				<!-- script-for-menu -->
 				<script>
@@ -88,7 +93,7 @@
 						  <option value="opel">Cumberland</option>
 						  <option value="audi">Dawson</option>
 				</select> -->
-				<input type="text" placeholder="Search using Keywords .. Dentist,Gynecologist" name="keyword" id="keyword" style="width:400px;border-radius: 5px;">
+				<input type="text" placeholder="Search using Keywords .. Dentist,Gynecologist" name="keyword" id="countries" style="width:400px;border-radius: 5px;">
 					<button type="submit" class="btn btn-default"></button>
 				</div>		
 			</form>
@@ -100,11 +105,11 @@
 	<div class="services" id="services">
 	<div class="grid_3 grid_5" style="border: 1px solid black;border-radius: 55px;height:150px">
 		<div class="container">
-		<h3  style="font-size: 2em">Top Doctors In Thunderbay</h3>
+		<h3  style="font-size: 2em">Top Specializations</h3>
 				<div style="height:13px"> </div>
 				<form action="search" >				        
        			  <input type="hidden" name="keyword"  id="Dentist" value="Dentist">
-    			 <button  style="float:left;width:150px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">Dentist(3)</button>
+    			 <button  style="float:left;width:150px;height:45px;border-radius: 25px" type="submit"  class="btn btn-warning">Dentist(5)</button>
     			 </form>	
     			 		
     			  <form action="search" >
@@ -159,8 +164,8 @@
 							</a>
 						</div>
 						<div class="caption services-caption">
-							<h4><a href="doctorsSpecialization.jsp">Doctors</a></h4>
-							<p>Find the best available doctor near your location</p>				
+							<h4><a href="doctorsSpecialization.jsp">Specialities</a></h4>
+							<p>Find the best available doctor based on specialities</p>				
 						</div>
 					</div>
 				</div>
@@ -186,7 +191,7 @@
 						</div>
 						<div class="caption services-caption">
 							<h4><a href="clinicSpecialization.jsp">Clinics</a></h4>
-							<p>Cras justo odioda pibus facilisis dignissimos voluptatem accusantium</p>				
+							<p>Find the best available Clinics near your location</p>>				
 						</div>
 					</div>
 				</div>
@@ -269,7 +274,21 @@ function myFunction() {
         x.style.display = "none";
     }
 }
+var options = {
+		
+		url: "json/countries.json",
 
+		  getValue: "name",
+
+		  list: {	
+		    match: {
+		      enabled: true
+		    }
+		  },
+
+		  theme: "square"
+		};
+				$("#countries").easyAutocomplete(options);
 
 
 

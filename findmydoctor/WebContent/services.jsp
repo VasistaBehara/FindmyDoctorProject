@@ -18,11 +18,22 @@
 <!-- start-smoth-scrolling-->
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>	
+
+
+<!-- JS file -->
+<script src="js/jquery.easy-autocomplete.min.js"></script> 
+
+<!-- CSS file -->
+<link rel="stylesheet" href="css/easy-autocomplete.min.css"> 
+
+ 
+
+
 <script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){		
 				event.preventDefault();
-				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				$('html,body').animate({scrollTop:$(this.hash) .offset().top},1000);
 			});
 		});
 </script>
@@ -49,9 +60,6 @@
 			<!--top-nav-->
 			<div class="top-nav cl-effect-5">
 				<span class="menu-icon"><img src="images/menu-icon.png" alt=""/></span>		
-				<ul class="nav1">
-					<li><a href="services.jsp"> <span data-hover="SearchBy">Search By</span></a></li>
-				</ul>
 				<!-- script-for-menu -->
 				<script>
 				   $( "span.menu-icon" ).click(function() {
@@ -63,9 +71,13 @@
 				<!-- /script-for-menu -->
 			</div>
 			<!--//top-nav-->
+			<form action="searchD" >
+    			 	  <input type="hidden" name="keyword"  >
+    				 <button  style="float:left;width:150px;height:45px;border-radius: 25px" type="submit"  class="btn btn-success">List All Doctors</button>
+    		</form>
 			<form class="navbar-form navbar-right" action="search">
 				<div class="form-group">
-				<input type="text" placeholder="Search using Keywords .. Dentist,Gynecologist,Pediatrician" name="keyword" id="keyword" style="width:400px;border-radius: 5px;">
+				<input type="text" placeholder="Search Keywords .. Dentist,Gynecologist" name="keyword" id="countries" style="width:400px;border-radius: 5px;">
 					<button type="submit" class="btn btn-default"></button>
 				</div>		
 			</form>
@@ -79,7 +91,7 @@
 	<!--services-->
 	<div class="services">
 		<div class="container" >
-			<h3>Search by</h3>
+			<h3>Home</h3>
 			<div class="row services-info" >			
 				<div class="col-xs-6 col-md-4 services-grids" >
 					<div class="thumbnail" >
@@ -89,8 +101,8 @@
 							</a>
 						</div>
 						<div class="caption services-caption">
-							<h4><a href="doctorsSpecialization.jsp">Doctors</a></h4>
-											
+							<h4><a href="doctorsSpecialization.jsp">Specialities</a></h4>
+							<p>Find the best available doctor based on specialities</p>				
 						</div>
 					</div>
 				</div>
@@ -103,7 +115,7 @@
 						</div>
 						<div class="caption services-caption">
 							<h4><a href="hospitalSpecialization.jsp">Hospitals</a></h4>
-										
+							<p>Find the best available hospital near your location</p>			
 						</div>
 					</div>
 				</div>
@@ -116,7 +128,7 @@
 						</div>
 						<div class="caption services-caption">
 							<h4><a href="clinicSpecialization.jsp">Clinics</a></h4>
-										
+							<p>Find the best available Clinics near your location</p>			
 						</div>
 					</div>
 				</div>
@@ -184,6 +196,21 @@
 			$().UItoTop({ easingType: 'easeOutQuart' });
 			
 		});
+		var options = {
+				
+		url: "json/countries.json",
+
+		  getValue: "name",
+
+		  list: {	
+		    match: {
+		      enabled: true
+		    }
+		  },
+
+		  theme: "square"
+		};
+				$("#countries").easyAutocomplete(options);
 	</script>
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 	<!--//smooth-scrolling-of-move-up-->

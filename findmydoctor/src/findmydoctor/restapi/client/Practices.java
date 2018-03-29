@@ -84,5 +84,12 @@ public class Practices {
 	public void setPhones(List<Phones> phones) {
 		this.phones = phones;
 	}
+	@Override
+	public String toString() {
+		return "Practices [location_slug=" + location_slug + ", withinDistanceArea=" + withinDistanceArea
+				+ ", distance=" + distance + ", lat=" + lat + ", lon=" + lon + ", uid=" + uid + ", name=" + name
+				+ ", website=" + website + ", acceptsNewPatients=" + acceptsNewPatients + ", vaAddress=" + vaAddress
+				+ ", phones=" + phones + "]";
+	}
 	
 }

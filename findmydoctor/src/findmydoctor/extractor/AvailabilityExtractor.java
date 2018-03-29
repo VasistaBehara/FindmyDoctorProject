@@ -50,6 +50,7 @@ public class AvailabilityExtractor implements ResultSetExtractor<Availability>{
 			availability.setDay2(day2);
 			availability.setDay3(day3);
 			availability.setDocName(resultSet.getString("Name"));
+			availability.setDocpic(resultSet.getString("Docpic"));
 		
 			
 		} catch (Exception e) {

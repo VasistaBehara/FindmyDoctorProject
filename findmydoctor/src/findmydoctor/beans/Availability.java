@@ -13,6 +13,7 @@ public class Availability {
 	private Day2 Day2;
 	private Day3 Day3;
 	private String DocName;
+	private String docpic;
 	/**
 	 * @return the Day1
 	 */
@@ -54,13 +55,19 @@ public class Availability {
 	 */
 	@Override
 	public String toString() {
-		return "Availability [Day1=" + Day1 + ", Day2=" + Day2 + ", Day3=" + Day3 + ",DocName="+DocName+"]";
+		return "Availability [Day1=" + Day1 + ", Day2=" + Day2 + ", Day3=" + Day3 + ",DocName="+DocName+", docpic="+docpic+"]";
 	}
 	public String getDocName() {
 		return DocName;
 	}
 	public void setDocName(String docName) {
 		DocName = docName;
+	}
+	public String getDocpic() {
+		return docpic;
+	}
+	public void setDocpic(String docpic) {
+		this.docpic = docpic;
 	}
 	
 }
